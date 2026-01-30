@@ -1,0 +1,2227 @@
+﻿<!DOCTYPE html>
+<html lang="zh-TW"><head><script>(function(firebaseConfig, initialAuthToken, appId) {
+        window.__firebase_config = firebaseConfig;
+        window.__initial_auth_token = initialAuthToken;
+        window.__app_id = appId;
+            })("\n{\n  \"apiKey\": \"AIzaSyCqyCcs2R2e7AegGjvFAwG98wlamtbHvZY\",\n  \"authDomain\": \"bard-frontend.firebaseapp.com\",\n  \"projectId\": \"bard-frontend\",\n  \"storageBucket\": \"bard-frontend.firebasestorage.app\",\n  \"messagingSenderId\": \"175205271074\",\n  \"appId\": \"1:175205271074:web:2b7bd4d34d33bf38e6ec7b\"\n}\n","eyJhbGciOiJSUzI1NiIsImtpZCI6ImIxZjQyNzYzZjkzNGExOTQwMWNkOTFhNjdjY2FhNzdiNjIwNWU2N2EiLCJ0eXAiOiJKV1QifQ.eyJzdWIiOiJmaXJlYmFzZS1hZG1pbnNkay1mYnN2Y0BiYXJkLWZyb250ZW5kLmlhbS5nc2VydmljZWFjY291bnQuY29tIiwiYXVkIjoiaHR0cHM6Ly9pZGVudGl0eXRvb2xraXQuZ29vZ2xlYXBpcy5jb20vZ29vZ2xlLmlkZW50aXR5LmlkZW50aXR5dG9vbGtpdC52MS5JZGVudGl0eVRvb2xraXQiLCJ1aWQiOiIxMzM2NjA1MTkzNzc2MzIzMDg2MyIsImlzcyI6ImZpcmViYXNlLWFkbWluc2RrLWZic3ZjQGJhcmQtZnJvbnRlbmQuaWFtLmdzZXJ2aWNlYWNjb3VudC5jb20iLCJjbGFpbXMiOnsiYXBwSWQiOiJjXzU3NzkxODgwZTlmYTMzNGZfaW5kZXguaHRtbC03NDkifSwiZXhwIjoxNzY5NzY3NTQ2LCJpYXQiOjE3Njk3NjM5NDYsImFsZyI6IlJTMjU2In0.g-_L7sQlhXd4dQmzmsN1wo3vVm041GMbj0cgzN9ALO0uEu6FZJOQ6VYs-wEbxJPVr5pFCSamYLMznyg-axHSjVTUBBtyV8LNdVhlg3tfGDJ11_tZp4y-d2I4WuxdglDOD5gfxiMUwmabwj1wXtmXoc4LUvlLUT-01Y5Hkc06s1N8EgQgcyiDzq8wL5a1MfGpXAF4yYbHKPbth8-Q30JzHr8IE1qAI2B7Dw5Hgz7uVRUJBvxRTn_j4UhaelDx5W7B3fqBvi4hZKS2qFIs1fNZdL3x-IozIjMAnOMIQjk2j-vbCsD24unvzNZdNv1iYM47TtXga_beakNAW07b-O0dVQ","c_57791880e9fa334f_index.html-749")</script><script>'use strict';var h=typeof Object.defineProperties=="function"?Object.defineProperty:function(a,b,d){if(a==Array.prototype||a==Object.prototype)return a;a[b]=d.value;return a};function l(a){a=["object"==typeof globalThis&&globalThis,a,"object"==typeof window&&window,"object"==typeof self&&self,"object"==typeof global&&global];for(var b=0;b<a.length;++b){var d=a[b];if(d&&d.Math==Math)return d}throw Error("Cannot find global object");}var n=l(this);
+function p(a,b){if(b)a:{var d=n;a=a.split(".");for(var c=0;c<a.length-1;c++){var e=a[c];if(!(e in d))break a;d=d[e]}a=a[a.length-1];c=d[a];b=b(c);b!=c&&b!=null&&h(d,a,{configurable:!0,writable:!0,value:b})}}function r(a){function b(c){return a.next(c)}function d(c){return a.throw(c)}return new Promise(function(c,e){function f(g){g.done?c(g.value):Promise.resolve(g.value).then(b,d).then(f,e)}f(a.next())})}function t(a){return r(a())}
+p("Object.values",function(a){return a?a:function(b){var d=[],c;for(c in b)Object.prototype.hasOwnProperty.call(b,c)&&d.push(b[c]);return d}});p("Array.prototype.includes",function(a){return a?a:function(b,d){var c=this;c instanceof String&&(c=String(c));var e=c.length;d=d||0;for(d<0&&(d=Math.max(d+e,0));d<e;d++){var f=c[d];if(f===b||Object.is(f,b))return!0}return!1}});/*
+
+ MIT License
+
+ Copyright (c) 2017-2023 W.Y.
+
+ Permission is hereby granted, free of charge, to any person obtaining a copy
+ of this software and associated documentation files (the "Software"), to deal
+ in the Software without restriction, including without limitation the rights
+ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ copies of the Software, and to permit persons to whom the Software is
+ furnished to do so, subject to the following conditions:
+
+ The above copyright notice and this permission notice shall be included in
+ all copies or substantial portions of the Software.
+
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ SOFTWARE.
+
+*/
+function u(a,b){const d=a.style;b.backgroundColor&&(d.backgroundColor=b.backgroundColor);b.width&&(d.width=`${b.width}px`);b.height&&(d.height=`${b.height}px`);const c=b.style;c!=null&&Object.keys(c).forEach(e=>{d[e]=c[e]})};var v=(()=>{let a=0;return()=>{a+=1;return`u${`0000${(Math.random()*1679616<<0).toString(36)}`.slice(-4)}${a}`}})();function w(a){const b=[];for(let d=0,c=a.length;d<c;d++)b.push(a[d]);return b}let x=null;function y(a={}){return x?x:a.l?x=a.l:x=w(window.getComputedStyle(document.documentElement))}function z(a,b){return(a=(a.ownerDocument.defaultView||window).getComputedStyle(a).getPropertyValue(b))?parseFloat(a.replace("px","")):0}
+function A(a,b={}){var d;if(!(d=b.width)){d=z(a,"border-left-width");var c=z(a,"border-right-width");d=a.clientWidth+d+c}(b=b.height)||(b=z(a,"border-top-width"),c=z(a,"border-bottom-width"),b=a.clientHeight+b+c);return{width:d,height:b}}function B(a){return new Promise((b,d)=>{const c=new Image;c.onload=()=>{c.decode().then(()=>{requestAnimationFrame(()=>b(c))})};c.onerror=d;c.crossOrigin="anonymous";c.decoding="async";c.src=a})}
+function C(a){return t(function*(){return Promise.resolve().then(()=>(new XMLSerializer).serializeToString(a)).then(encodeURIComponent).then(b=>`data:image/svg+xml;charset=utf-8,${b}`)})}
+function D(a,b,d){return t(function*(){const c=document.createElementNS("http://www.w3.org/2000/svg","svg"),e=document.createElementNS("http://www.w3.org/2000/svg","foreignObject");c.setAttribute("width",`${b}`);c.setAttribute("height",`${d}`);c.setAttribute("viewBox",`0 0 ${b} ${d}`);e.setAttribute("width","100%");e.setAttribute("height","100%");e.setAttribute("x","0");e.setAttribute("y","0");e.setAttribute("externalResourcesRequired","true");c.appendChild(e);e.appendChild(a);return C(c)})}
+var E=(a,b)=>{if(a instanceof b)return!0;a=Object.getPrototypeOf(a);return a===null?!1:a.constructor.name===b.name||E(a,b)};function F(a,b){return y(b).map(d=>{const c=a.getPropertyValue(d),e=a.getPropertyPriority(d);return`${d}: ${c}${e?" !important":""};`}).join(" ")}
+function G(a,b,d,c){a=window.getComputedStyle(a,d);var e=a.getPropertyValue("content");if(e!==""&&e!=="none"){var f=v();try{b.className=`${b.className} ${f}`}catch(k){return}e=document.createElement("style");var g=e.appendChild;d=`.${f}:${d}`;a.cssText?(c=a.getPropertyValue("content"),c=`${a.cssText} content: '${c.replace(/'|"/g,"")}';`):c=F(a,c);g.call(e,document.createTextNode(`${d}{${c}}`));b.appendChild(e)}};function H(a){return a.search(/^(data:)/)!==-1}function I(a,b,d){return t(function*(){const c=yield fetch(a,b);if(c.status===404)throw Error(`Resource "${c.url}" not found`);const e=yield c.blob();return new Promise((f,g)=>{const k=new FileReader;k.onerror=g;k.onloadend=()=>{try{f(d({o:c,result:k.result}))}catch(m){g(m)}};k.readAsDataURL(e)})})}const J={};function K(a,b,d){let c=a.replace(/\?.*/,"");d&&(c=a);/ttf|otf|eot|woff2?/i.test(c)&&(c=c.replace(/.*\//,""));return b?`[${b}]${c}`:c}
+function L(a,b,d){return t(function*(){const c=K(a,b,d.C);if(J[c]!=null)return J[c];d.u&&(a+=(/\?/.test(a)?"&":"?")+(new Date).getTime());let e;try{const f=yield I(a,d.i,({o:g,result:k})=>{b||(b=g.headers.get("Content-Type")||"");return k.split(/,/)[1]});e=`data:${b};base64,${f}`}catch(f){e=d.B||""}return J[c]=e})};const M={P:"application/font-woff",R:"application/font-woff",N:"application/font-truetype",v:"application/vnd.ms-fontobject",H:"image/png",F:"image/jpeg",D:"image/jpeg",A:"image/gif",M:"image/tiff",L:"image/svg+xml",O:"image/webp"};function N(a){return(a=/\.([^./]*?)$/g.exec(a))?a[1]:""};function O(a){return t(function*(){const b=a.toDataURL();return b==="data:,"?a.cloneNode(!1):B(b)})}function aa(a,b){return t(function*(){if(a.currentSrc){var d=document.createElement("canvas");const c=d.getContext("2d");d.width=a.clientWidth;d.height=a.clientHeight;c==null||c.drawImage(a,0,0,d.width,d.height);d=d.toDataURL();return B(d)}d=a.poster;d=yield L(d,M[N(d).toLowerCase()]||"",b);return B(d)})}
+function ba(a,b){return t(function*(){try{let d;if(a==null?0:(d=a.contentDocument)==null?0:d.body)return yield P(a.contentDocument.body,b,!0)}catch(d){}return a.cloneNode(!1)})}function ca(a,b){return t(function*(){return E(a,HTMLCanvasElement)?O(a):E(a,HTMLVideoElement)?aa(a,b):E(a,HTMLIFrameElement)?ba(a,b):a.cloneNode(a.tagName!=null&&a.tagName.toUpperCase()==="SVG")})}
+function da(a,b,d){return t(function*(){if(b.tagName!=null&&b.tagName.toUpperCase()==="SVG")return b;let c=[];if(a.tagName!=null&&a.tagName.toUpperCase()==="SLOT"&&a.assignedNodes)c=w(a.assignedNodes());else{let e;if(E(a,HTMLIFrameElement)&&((e=a.contentDocument)==null?0:e.body))c=w(a.contentDocument.body.childNodes);else{let f;c=w(((f=a.shadowRoot)!=null?f:a).childNodes)}}if(c.length===0||E(a,HTMLVideoElement))return b;yield c.reduce((e,f)=>e.then(()=>P(f,d)).then(g=>{g&&b.appendChild(g)}),Promise.resolve());
+return b})}function ea(a,b,d){const c=b.style;if(c){var e=window.getComputedStyle(a);e.cssText?(c.cssText=e.cssText,c.transformOrigin=e.transformOrigin):y(d).forEach(f=>{let g=e.getPropertyValue(f);f==="font-size"&&g.endsWith("px")&&(g=`${Math.floor(parseFloat(g.substring(0,g.length-2)))-.1}px`);E(a,HTMLIFrameElement)&&f==="display"&&g==="inline"&&(g="block");f==="d"&&b.getAttribute("d")&&(g=`path(${b.getAttribute("d")})`);c.setProperty(f,g,e.getPropertyPriority(f))})}}
+function fa(a,b){E(a,HTMLSelectElement)&&(b=Array.from(b.children).find(d=>a.value===d.getAttribute("value")))&&b.setAttribute("selected","")}
+function ha(a,b){return t(function*(){var d=a.querySelectorAll?a.querySelectorAll("use"):[];if(d.length===0)return a;var c={};for(var e=0;e<d.length;e++){var f=d[e].getAttribute("xlink:href");if(f){const g=document.querySelector(f);a.querySelector(f)||!g||c[f]||(c[f]=yield P(g,b,!0))}}d=Object.values(c);if(d.length){c=document.createElementNS("http://www.w3.org/1999/xhtml","svg");c.setAttribute("xmlns","http://www.w3.org/1999/xhtml");c.style.position="absolute";c.style.width="0";c.style.height="0";
+c.style.overflow="hidden";c.style.display="none";e=document.createElementNS("http://www.w3.org/1999/xhtml","defs");c.appendChild(e);for(f=0;f<d.length;f++)e.appendChild(d[f]);a.appendChild(c)}return a})}
+function P(a,b,d){return t(function*(){return d||!b.filter||b.filter(a)?Promise.resolve(a).then(c=>ca(c,b)).then(c=>da(a,c,b)).then(c=>{E(c,Element)&&(ea(a,c,b),G(a,c,":before",b),G(a,c,":after",b),E(a,HTMLTextAreaElement)&&(c.textContent=a.value),E(a,HTMLInputElement)&&c.setAttribute("value",a.value),fa(a,c));return c}).then(c=>ha(c,b)):null})};const Q=/url\((['"]?)([^'"]+?)\1\)/g,ia=/url\([^)]+\)\s*format\((["']?)([^"']+)\1\)/g,ja=/src:\s*(?:url\([^)]+\)\s*format\([^)]+\)[,;]\s*)+/g;function ka(a){const b=[];a.replace(Q,(d,c,e)=>{b.push(e);return d});return b.filter(d=>!H(d))}
+function la(a,b,d,c){return t(function*(){try{const e=d?(new URL(b,d||void 0)).toString():b;let f;f=yield L(e,M[N(b).toLowerCase()]||"",c);return a.replace(new RegExp(`(url\\(['"]?)(${b.replace(/([.*+?^${}()|\[\]\/\\])/g,"\\$1")})(['"]?\\))`,"g"),`$1${f}$3`)}catch(e){}return a})}function ma(a,{I:b}){return b?a.replace(ja,d=>{for(;;){const [c,,e]=ia.exec(d)||[],f=c,g=e;if(!g)return"";if(g===b)return`src: ${f};`}}):a}
+function R(a,b,d){return t(function*(){if(a.search(Q)===-1)return a;const c=ma(a,d);return ka(c).reduce((e,f)=>e.then(g=>la(g,f,b,d)),Promise.resolve(c))})};function S(a,b,d){return t(function*(){var c;const e=(c=b.style)==null?void 0:c.getPropertyValue(a);return e?(c=yield R(e,null,d),b.style.setProperty(a,c,b.style.getPropertyPriority(a)),!0):!1})}function na(a,b){return t(function*(){(yield S("background",a,b))||(yield S("background-image",a,b));(yield S("mask",a,b))||(yield S("-webkit-mask",a,b))||(yield S("mask-image",a,b))||(yield S("-webkit-mask-image",a,b))})}
+function oa(a,b){return t(function*(){const d=E(a,HTMLImageElement);if(d&&!H(a.src)||E(a,SVGImageElement)&&!H(a.href.baseVal)){var c=d?a.src:a.href.baseVal,e=yield L(c,M[N(c).toLowerCase()]||"",b);yield new Promise((f,g)=>{a.onload=f;a.onerror=b.m?(...k)=>{try{f(b.m(...k))}catch(m){g(m)}}:g;a.decode&&(a.decode=f);a.loading==="lazy"&&(a.loading="eager");d?(a.srcset="",a.src=e):a.href.baseVal=e})}})}
+function pa(a,b){return t(function*(){const d=w(a.childNodes).map(c=>T(c,b));yield Promise.all(d).then(()=>a)})}function T(a,b){return t(function*(){E(a,Element)&&(yield na(a,b),yield oa(a,b),yield pa(a,b))})};const U={};function V(a){return t(function*(){var b=U[a];if(b!=null)return b;b=yield(yield fetch(a)).text();b={url:a,cssText:b};return U[a]=b})}function W(a,b){return t(function*(){let d=a.cssText;const c=/url\(["']?([^"')]+)["']?\)/g,e=(d.match(/url\([^)]+\)/g)||[]).map(f=>t(function*(){let g=f.replace(c,"$1");g.startsWith("https://")||(g=(new URL(g,a.url)).href);return I(g,b.i,({result:k})=>{d=d.replace(f,`url(${k})`);return[f,k]})}));return Promise.all(e).then(()=>d)})}
+function X(a){if(a==null)return[];const b=[];a=a.replace(/(\/\*[\s\S]*?\*\/)/gi,"");for(var d=RegExp("((@.*?keyframes [\\s\\S]*?){([\\s\\S]*?}\\s*?)})","gi");;){var c=d.exec(a);if(c===null)break;b.push(c[0])}a=a.replace(d,"");d=/@import[\s\S]*?url\([^)]*\)[\s\S]*?;/gi;for(c=RegExp("((\\s*?(?:\\/\\*[\\s\\S]*?\\*\\/)?\\s*?@media[\\s\\S]*?){([\\s\\S]*?)}\\s*?})|(([\\s\\S]*?){([\\s\\S]*?)})","gi");;){let e=d.exec(a);if(e===null)if(e=c.exec(a),e===null)break;else d.lastIndex=c.lastIndex;else c.lastIndex=
+d.lastIndex;b.push(e[0])}return b}
+function qa(a,b){return t(function*(){const d=[],c=[];a.forEach(e=>{if("cssRules"in e)try{w(e.cssRules||[]).forEach((f,g)=>{if(f.type===CSSRule.IMPORT_RULE){let k=g+1;f=V(f.href).then(m=>W(m,b)).then(m=>X(m).forEach(q=>{try{e.insertRule(q,q.startsWith("@import")?k+=1:e.cssRules.length)}catch(Da){}})).catch(()=>{});c.push(f)}})}catch(f){const g=a.find(k=>k.href==null)||document.styleSheets[0];e.href!=null&&c.push(V(e.href).then(k=>W(k,b)).then(k=>X(k).forEach(m=>{g.insertRule(m,g.cssRules.length)})).catch(()=>
+{}))}});return Promise.all(c).then(()=>{a.forEach(e=>{if("cssRules"in e)try{w(e.cssRules||[]).forEach(f=>{d.push(f)})}catch(f){}});return d})})}function ra(a){return a.filter(b=>b.type===CSSRule.FONT_FACE_RULE).filter(b=>b.style.getPropertyValue("src").search(Q)!==-1)}function sa(a,b){return t(function*(){if(a.ownerDocument==null)throw Error("Provided element is not within a Document");var d=w(a.ownerDocument.styleSheets);d=yield qa(d,b);return ra(d)})}
+function ta(a){function b(c){(c.style.fontFamily||getComputedStyle(c).fontFamily).split(",").forEach(e=>{d.add(e.trim().replace(/["']/g,""))});Array.from(c.children).forEach(e=>{e instanceof HTMLElement&&b(e)})}const d=new Set;b(a);return d}function ua(a,b){return t(function*(){const d=yield sa(a,b),c=ta(a);return(yield Promise.all(d.filter(e=>c.has(e.style.fontFamily.trim().replace(/["']/g,""))).map(e=>R(e.cssText,e.parentStyleSheet?e.parentStyleSheet.href:null,b)))).join("\n")})}
+function va(a,b){return t(function*(){const d=b.j!=null?b.j:b.K?null:yield ua(a,b);if(d){const c=document.createElement("style");c.appendChild(document.createTextNode(d));a.firstChild?a.insertBefore(c,a.firstChild):a.appendChild(c)}})};function wa(a,b={}){return t(function*(){const {width:d,height:c}=A(a,b),e=yield P(a,b,!0);yield va(e,b);yield T(e,b);u(e,b);return yield D(e,d,c)})}
+function xa(a,b={}){return t(function*(){const {width:d,height:c}=A(a,b);var e=yield wa(a,b);e=yield B(e);const f=document.createElement("canvas"),g=f.getContext("2d"),k=b.G||window.devicePixelRatio||1,m=b.h||d,q=b.g||c;f.width=m*k;f.height=q*k;!b.J&&(f.width>16384||f.height>16384)&&(f.width>16384&&f.height>16384?f.width>f.height?(f.height*=16384/f.width,f.width=16384):(f.width*=16384/f.height,f.height=16384):f.width>16384?(f.height*=16384/f.width,f.width=16384):(f.width*=16384/f.height,f.height=
+16384));f.style.width=`${m}`;f.style.height=`${q}`;b.backgroundColor&&(g.fillStyle=b.backgroundColor,g.fillRect(0,0,f.width,f.height));g.drawImage(e,0,0,f.width,f.height);return f})}function ya(a,b={}){return t(function*(){return(yield xa(a,b)).toDataURL()})};const za=["gemini.google.com","corp.google.com","proxy.googlers.com"];function Y(){return document.body.querySelectorAll('[class*="animate"]').length>0}function Z(a){return t(function*(){try{return yield ya(a,{h:a.offsetWidth,g:a.offsetHeight})}catch(d){var b=a.offsetHeight;const c=document.createElement("canvas");c.width=a.offsetWidth;c.height=b;return c.toDataURL("image/png")}})}
+function Aa(){return t(function*(){const a=document.body.offsetWidth,b=document.body.offsetHeight,d=document.body.cloneNode(!0);d.querySelectorAll('[class*="animate"]').forEach(c=>{c.classList.remove(...Array.from(c.classList).filter(e=>e.startsWith("animate")))});d.style.width=`${a}px`;d.style.height=`${b}px`;return d})}
+function Ba(a){return t(function*(){let b=document.body;if(Y()){var d=yield Aa();b=d;document.body.appendChild(d)}d=yield Z(b);Y()&&document.body.removeChild(b);window.parent.postMessage({type:"SEND_SCREENSHOT",image:d,topOffset:document.documentElement.scrollTop},a.origin)})}function Ca(a){return t(function*(){const b={type:"SEND_SCREENSHOT_FOR_DATA_VISUALIZATION",image:yield Z(document.body),topOffset:0};window.parent.postMessage(b,a.origin)})}
+window.addEventListener("message",a=>t(function*(){if(za.some(d=>a.origin.includes(d))){var b=a.data;b&&(b.type==="MAKE_SCREENSHOT"&&(yield Ba(a)),b.type==="MAKE_SCREENSHOT_FOR_DATA_VISUALIZATION"&&(yield Ca(a)))}}));
+</script><script>(function() {
+  // Ensure this script is executed only once
+  if (window.firebaseAuthBridgeScriptLoaded) {
+    return;
+  }
+  window.firebaseAuthBridgeScriptLoaded = true;
+
+  let nextTokenPromiseId = 0;
+
+  // Stores { resolve, reject } for ongoing token requests
+  const pendingTokenPromises = {};
+
+  // Listen for messages from the Host Application
+  window.addEventListener('message', function(event) {
+
+    const messageData = event.data;
+
+  if (messageData && messageData.type === 'RESOLVE_NEW_FIREBASE_TOKEN') {
+      const { success, token, error, promiseId } = messageData ?? {};
+      if (pendingTokenPromises[promiseId]) {
+        if (success) {
+          pendingTokenPromises[promiseId].resolve(token);
+        } else {
+          pendingTokenPromises[promiseId].reject(new Error(error || 'Token refresh failed from host.'));
+        }
+        delete pendingTokenPromises[promiseId];
+      }
+    }
+  });
+
+  // Expose a function for the Generated App to request a new Firebase token
+  window.requestNewFirebaseToken = function() {
+    const currentPromiseId = nextTokenPromiseId++;
+    const promise = new Promise((resolve, reject) => {
+      pendingTokenPromises[currentPromiseId] = { resolve, reject };
+    });
+    if (window.parent && window.parent !== window) {
+      window.parent.postMessage({
+        type: 'REQUEST_NEW_FIREBASE_TOKEN',
+        promiseId: currentPromiseId
+      }, '*');
+    } else {
+      pendingTokenPromises[currentPromiseId].reject(new Error('No parent window to request token from.'));
+      delete pendingTokenPromises[currentPromiseId];
+    }
+    return promise;
+  };
+})();</script><script>
+let realOriginalGetUserMedia = null;
+if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+  realOriginalGetUserMedia = navigator.mediaDevices.getUserMedia.bind(navigator.mediaDevices);
+}
+
+(function() {
+  if (navigator.mediaDevices && navigator.mediaDevices.__proto__) {
+    try {
+      Object.defineProperty(navigator.mediaDevices.__proto__, 'getUserMedia', {
+        get: function() {
+          return undefined; // Or throw an error
+        },
+        configurable: false
+      });
+    } catch (error) {
+      console.error("Error defining prototype getter:", error);
+    }
+  }
+})();
+
+(function() {
+  const pendingMediaResolvers = {};
+  let nextMediaPromiseId = 0;
+
+  function requestMediaPermissions(constraints) {
+    const mediaPromiseId = nextMediaPromiseId++;
+    const promise = new Promise((resolve, reject) => {
+      pendingMediaResolvers[mediaPromiseId] = (granted) => {
+        delete pendingMediaResolvers[mediaPromiseId];
+        resolve(granted);
+      };
+    });
+
+    window.parent.postMessage({
+      type: 'requestMediaPermission',
+      constraints: constraints,
+      promiseId: mediaPromiseId,
+    }, '*');
+
+    return promise;
+  }
+
+  let originalGetUserMedia = realOriginalGetUserMedia;
+
+  function interceptGetUserMedia() {
+    if (navigator.mediaDevices) {
+      Object.defineProperty(navigator.mediaDevices, 'getUserMedia', {
+        value: function(constraints) {
+          return requestMediaPermissions(constraints).then((granted) => {
+            if (granted) {
+              if (originalGetUserMedia) {
+                return originalGetUserMedia(constraints);
+              } else {
+                throw new Error("Original getUserMedia not available.");
+              }
+            } else {
+              throw new DOMException('Permission denied', 'NotAllowedError');
+            }
+          });
+        },
+        writable: false,
+        configurable: false
+      });
+    }
+  }
+
+  interceptGetUserMedia();
+
+  const observer = new MutationObserver(function(mutationsList, observer) {
+    for (const mutation of mutationsList) {
+      if (mutation.type === 'reconfigured' && mutation.name === 'getUserMedia' && mutation.object === navigator.mediaDevices) {
+        interceptGetUserMedia();
+      } else if (mutation.type === 'attributes' && mutation.attributeName === 'getUserMedia' && mutation.target === navigator.mediaDevices) {
+        interceptGetUserMedia();
+      } else if (mutation.type === 'childList' && mutation.addedNodes) {
+        mutation.addedNodes.forEach(node => {
+          if (node === navigator.mediaDevices) {
+            interceptGetUserMedia();
+          }
+        });
+      }
+    }
+  });
+
+  function interceptSpeechRecognition() {
+    if (!window.SpeechRecognition && !window.webkitSpeechRecognition) {
+      return;
+    }
+
+    const OriginalSpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+
+    const SpeechRecognitionWrapper = function(...args) {
+      const recognizer = new OriginalSpeechRecognition(...args);
+      const originalStart = recognizer.start.bind(recognizer);
+
+      recognizer.start = function() {
+        requestMediaPermissions({ audio: true }).then(granted => {
+          if (granted) {
+            originalStart();
+          } else {
+            const errorEvent = new SpeechRecognitionErrorEvent('error');
+            errorEvent.error = 'not-allowed'; // This is the standard error for permission denial.
+            recognizer.dispatchEvent(errorEvent);
+          }
+        });
+      };
+
+      return recognizer;
+    };
+
+    SpeechRecognitionWrapper.prototype = OriginalSpeechRecognition.prototype;
+    SpeechRecognitionWrapper.prototype.constructor = SpeechRecognitionWrapper;
+
+    if (window.SpeechRecognition) {
+      window.SpeechRecognition = SpeechRecognitionWrapper;
+    }
+    if (window.webkitSpeechRecognition) {
+      window.webkitSpeechRecognition = SpeechRecognitionWrapper;
+    }
+  }
+
+  interceptSpeechRecognition();
+
+  window.addEventListener('message', function(event) {
+    if (event.data) {
+      if (event.data.type === 'resolveMediaPermission') {
+        const { promiseId, granted } = event.data;
+        if (pendingMediaResolvers[promiseId]) {
+          pendingMediaResolvers[promiseId](granted);
+        }
+      }
+    }
+  });
+
+})();</script><script>((function(modelInformation) {
+  const originalFetch = window.fetch;
+  // TODO: b/421908508 - Move these out of the script and match all generative AI model calls.
+  let googleLlmBaseApiUrls = [
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.textModelName + ':streamGenerateContent',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.textModelName + ':generateContent',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.imageModelName + ':predict',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.imageModelName + ':predictLongRunning',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.imageEditModelName + ':generateContent',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.imageTransformModelName + ':generateContent',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.videoModelName + ':predict',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.videoModelName + ':predictLongRunning',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.ttsModelName + ':generateContent',
+  ];
+  modelInformation.deprecatedTextModelNames.forEach((modelName) => {
+    googleLlmBaseApiUrls.push(
+      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':streamGenerateContent',
+      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':generateContent',
+    );
+  });
+  modelInformation.deprecatedImageModelNames.forEach((modelName) => {
+    googleLlmBaseApiUrls.push(
+      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':predict',
+      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':predictLongRunning',
+    );
+  });
+
+  const pendingFetchResolvers = {};
+  let nextPromiseId = 0;
+
+  function handleStringInput(input, optionsArgument) {
+    const actualUrl = input;
+    const fetchCallArgs = [actualUrl, optionsArgument];
+    const effectiveOptions = optionsArgument || {};
+    const bodyForApiKeyCheck = effectiveOptions.body;
+    const bodyForPostMessage = effectiveOptions.body;
+    return { actualUrl, fetchCallArgs, effectiveOptions, bodyForApiKeyCheck, bodyForPostMessage };
+  }
+
+  function handleRequestInput(input, optionsArgument) {
+    const actualUrl = input.url;
+    const fetchCallArgs = [input, optionsArgument];
+    const effectiveOptions = { method: input.method, headers: new Headers(input.headers) };
+    let bodyForApiKeyCheck;
+    let bodyForPostMessage;
+
+    if (optionsArgument) {
+      if (optionsArgument.method) effectiveOptions.method = optionsArgument.method;
+      if (optionsArgument.headers) effectiveOptions.headers = new Headers(optionsArgument.headers);
+      if ('body' in optionsArgument) {
+        bodyForApiKeyCheck = optionsArgument.body;
+        bodyForPostMessage = optionsArgument.body;
+      } else {
+        bodyForApiKeyCheck = undefined;
+        bodyForPostMessage = input.body;
+      }
+    } else {
+      bodyForApiKeyCheck = undefined;
+      bodyForPostMessage = input.body;
+    }
+    return { actualUrl, fetchCallArgs, effectiveOptions, bodyForApiKeyCheck, bodyForPostMessage };
+  }
+
+  window.fetch = function(input, optionsArgument) {
+    let actualUrl;
+    let fetchCallArgs;
+    let effectiveOptions = {};
+    let bodyForApiKeyCheck;
+    let bodyForPostMessage;
+
+    if (typeof input === 'string') {
+      ({actualUrl, fetchCallArgs, effectiveOptions, bodyForApiKeyCheck, bodyForPostMessage} = handleStringInput(input, optionsArgument));
+    } else if (input instanceof Request) {
+      ({actualUrl, fetchCallArgs, effectiveOptions, bodyForApiKeyCheck, bodyForPostMessage} = handleRequestInput(input, optionsArgument));
+    } else {
+      return originalFetch.apply(window, [input, optionsArgument]);
+    }
+
+    effectiveOptions.method = effectiveOptions.method || 'GET';
+    if (!effectiveOptions.headers) {
+      effectiveOptions.headers = new Headers();
+    }
+
+
+    if (typeof actualUrl === 'string' && googleLlmBaseApiUrls.some((url) => actualUrl.startsWith(url))) {
+      let apiKeyIsNull = true;
+
+      const regex = new RegExp("models/([^:]+)");
+      const modelNameMatch = actualUrl.match(regex);
+      const modelName = modelNameMatch ? modelNameMatch[1] : 'unspecified';
+
+
+      try {
+        const urlObject = new URL(actualUrl);  // Use URL object for robust parsing
+        const apiKeyParam = urlObject.searchParams.get('key');
+        if (apiKeyParam) {
+          apiKeyIsNull = false;
+        }
+      } catch (e) {
+        // Continue checks even if URL parsing fails
+      }
+
+      if (apiKeyIsNull && effectiveOptions.headers) {
+        const h = new Headers(effectiveOptions.headers);
+        const apiKeyHeaderValue = h.get('X-API-Key') || h.get('x-api-key');
+        if (apiKeyHeaderValue) {
+          apiKeyIsNull = false;
+          return originalFetch.apply(window, fetchCallArgs);
+        }
+      }
+
+      if (apiKeyIsNull && effectiveOptions.method && ['POST', 'PUT', 'PATCH'].includes(effectiveOptions.method.toUpperCase()) && typeof bodyForApiKeyCheck === 'string') {
+        try {
+          const bodyData = JSON.parse(bodyForApiKeyCheck);
+          if (bodyData && bodyData.apiKey) {
+            apiKeyIsNull = false;
+            return originalFetch.apply(window, fetchCallArgs);
+          }
+        } catch (e) {
+          // Ignore JSON parsing errors
+        }
+      }
+
+      if(apiKeyIsNull) {
+        const promiseId = nextPromiseId++;
+        const promise = new Promise((resolve) => {
+          pendingFetchResolvers[promiseId] = (resolvedResponse) => {
+            delete pendingFetchResolvers[promiseId];
+            resolve(resolvedResponse);
+          };
+        });
+
+        let serializedBodyForPostMessage;
+        if (typeof bodyForPostMessage === 'string' || bodyForPostMessage == null) {
+            serializedBodyForPostMessage = bodyForPostMessage;
+        } else if (bodyForPostMessage instanceof ReadableStream) {
+            serializedBodyForPostMessage = null;
+        } else {
+            try {
+                serializedBodyForPostMessage = JSON.stringify(bodyForPostMessage);
+            } catch (e) {
+                serializedBodyForPostMessage = null;
+            }
+        }
+
+        const messageOptions = {
+            method: effectiveOptions.method,
+            headers: Object.fromEntries(new Headers(effectiveOptions.headers).entries()),
+            body: serializedBodyForPostMessage
+        };
+
+        window.parent.postMessage({
+          type: 'requestFetch',
+          url: actualUrl,
+          modelName: modelName,
+          options: messageOptions,
+          promiseId: promiseId,
+        }, '*');
+
+        return promise;
+      }
+      return originalFetch.apply(window, fetchCallArgs);
+    }
+    return originalFetch.apply(window, fetchCallArgs);
+  };
+
+  window.addEventListener('message', function(event) {
+    if (event.data && event.data.type === 'resolveFetch') {
+      const { promiseId, response } = event.data;
+      if (pendingFetchResolvers[promiseId]) {
+        try {
+          const reconstructedResponse = new Response(response.body, {
+            status: response.status,
+            statusText: response.statusText,
+            headers: new Headers(response.headers),
+          });
+          pendingFetchResolvers[promiseId](reconstructedResponse);
+        } catch (error) {
+          pendingFetchResolvers[promiseId](new Response(null, { status: 500, statusText: "Interceptor Response Reconstruction Error" }));
+        }
+      }
+    }
+  });
+
+}))({"textModelName":"gemini-2.5-flash-preview-09-2025","imageModelName":"imagen-4.0-generate-001","imageEditModelName":"gemini-2.5-flash-image-preview","imageTransformModelName":"gemini-3-pro-image-preview-11-2025","videoModelName":"veo-2.0-generate-001","ttsModelName":"gemini-2.5-flash-preview-tts","deprecatedTextModelNames":["gemini-2.0-flash","gemini-2.5-flash-preview-04-17","gemini-2.5-flash-preview-05-20"],"deprecatedImageModelNames":["imagen-3.0-generate-001","imagen-3.0-generate-002"]})</script><script>(function() {
+  const originalConsoleLog = console.log;
+  const originalConsoleError = console.error;
+
+    /**
+   * Normalizes an error event or a promise rejection reason into a structured error object.
+   * @param {*} errorEventOrReason The error object or reason.
+   * @return {object} Structured error data { message, name, stack }.
+   */
+  function getErrorObject(errorEventOrReason) {
+    if (errorEventOrReason instanceof Error) {
+      return {
+        message: errorEventOrReason.message,
+        name: errorEventOrReason.name,
+        stack: errorEventOrReason.stack,
+      };
+    }
+    // Fallback for non-Error objects.
+    try {
+      return {
+        message: JSON.stringify(errorEventOrReason),
+        name: 'UnknownErrorType',
+        stack: null,
+      };
+    } catch (e) {
+      return {
+        message: String(errorEventOrReason),
+        name: 'UnknownErrorTypeNonStringifiable',
+        stack: null,
+      };
+    }
+  }
+
+  /**
+   * Converts an array of arguments (from log/error) into a single string.
+   * Handles Error objects specially to include their message and stack.
+   * @param {Array<*>} args - Arguments passed to console methods.
+   * @return {string} A string representation of the arguments.
+   */
+  function stringifyArgs(args) {
+    return args
+      .map((arg) => {
+        if (arg instanceof Error) {
+          const {message, stack} = arg;
+          return `Error: ${message}${stack ? ('\nStack: ' + stack) : ''}`;
+        }
+        if (typeof arg === 'object' && arg !== null) {
+          try {
+            return JSON.stringify(arg);
+          } catch (error) {
+            return '[Circular Object]';
+          }
+        } else {
+          return String(arg);
+        }
+      })
+      .join(' ');
+  }
+
+  console.log = function(...args) {
+    const logString = stringifyArgs(args);
+    window.parent.postMessage({ type: 'log', message: logString }, '*');
+    originalConsoleLog.apply(console, args);
+  };
+
+  console.error = function(...args) {
+    let errorData;
+    if (args.length > 0 && args[0] instanceof Error) {
+      const err = args[0];
+      // If the first arg is an Error, capture its details.
+      errorData = {
+        type: 'error',
+        source: 'CONSOLE_ERROR',
+        ...getErrorObject(err),
+        rawArgsString: stringifyArgs(args.slice(1)),
+        timestamp: new Date().toISOString(),
+      };
+    } else {
+      // If not an Error object, treat all args as a general error message.
+      errorData = {
+        type: 'error',
+        source: 'CONSOLE_ERROR',
+        message: stringifyArgs(args),
+        name: 'ConsoleLoggedError',
+        stack: null,
+        timestamp: new Date().toISOString(),
+      };
+    }
+    window.parent.postMessage(errorData, '*');
+    originalConsoleError.apply(console, args);
+  };
+
+  // Listen for global unhandled synchronous errors.
+  window.addEventListener('error', function(event) {
+    const errorDetails = event.error ? getErrorObject(event.error) : {
+      message: event.message,
+      name: 'GlobalError',
+      stack: null,
+      filename: event.filename,
+      lineno: event.lineno,
+      colno: event.colno,
+    };
+
+    window.parent.postMessage({
+      type: 'error',
+      source: 'global',
+      ...errorDetails,
+      message: errorDetails.message || event.message,
+      timestamp: new Date().toISOString(),
+    }, '*');
+  });
+
+  // Listen for unhandled promise rejections (asynchronous errors).
+  window.addEventListener('unhandledrejection', function(event) {
+    const errorDetails = getErrorObject(event.reason);
+
+    window.parent.postMessage({
+      type: 'error',
+      source: 'unhandledrejection',
+      ...errorDetails,
+      message: errorDetails.message || 'Unhandled Promise Rejection',
+      timestamp: new Date().toISOString(),
+    }, '*');
+  });
+
+})();</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>Asahikawa-2026 旅遊計畫</title>
+    
+    <!-- Vue 3 -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js" crossorigin="anonymous"></script>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Leaflet CSS & JS (For Map) -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin="anonymous"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&amp;family=Roboto+Mono:wght@500;700&amp;display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'kr-bg': '#F8FAFC', 
+                        'kr-card': '#FFFFFF',
+                        'kr-primary': '#475569', 
+                        'kr-accent': '#F43F5E',
+                        'kr-text': '#1E293B',
+                        'kr-sub': '#64748B',
+                    },
+                    fontFamily: {
+                        sans: ['"Noto Sans TC"', 'sans-serif'],
+                        mono: ['"Roboto Mono"', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body { background-color: #F8FAFC; -webkit-tap-highlight-color: transparent; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        
+        .app-container { max-width: 480px; margin: 0 auto; background-color: #FDFCF8; min-height: 100vh; position: relative; box-shadow: 0 0 40px rgba(0,0,0,0.05); }
+        .soft-shadow { box-shadow: 0 4px 20px -5px rgba(0, 0, 0, 0.05); }
+        
+        /* Transitions */
+        .slide-up-enter-active, .slide-up-leave-active { transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1); }
+        .slide-up-enter-from, .slide-up-leave-to { transform: translateY(100%); }
+        .fade-enter-active, .fade-leave-active { transition: opacity 0.2s; }
+        .fade-enter-from, .fade-leave-to { opacity: 0; }
+        
+        #map { height: 100%; width: 100%; z-index: 1; }
+        /* Fix leaflet layering */
+        .leaflet-bottom { z-index: 0 !important; }
+        
+        /* Custom Marker Icon Style */
+        .custom-div-icon { background: transparent; border: none; }
+
+        .loading-overlay {
+            position: fixed; inset: 0; background: rgba(255,255,255,0.95); backdrop-filter: blur(5px);
+            z-index: 9999; display: flex; flex-direction: column; align-items: center; justify-content: center;
+        }
+        
+        /* Card Pattern Background */
+        .pattern-bg {
+            background-image: radial-gradient(circle, rgba(255,255,255,0.15) 1px, transparent 1px);
+            background-size: 8px 8px;
+        }
+    </style>
+<style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:"Noto Sans TC", sans-serif;font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:"Roboto Mono", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.fixed{position:fixed}.absolute{position:absolute}.relative{position:relative}.sticky{position:sticky}.inset-0{inset:0px}.-left-\[12px\]{left:-12px}.right-2{right:0.5rem}.top-0{top:0px}.top-2{top:0.5rem}.top-6{top:1.5rem}.-left-5{left:-1.25rem}.-top-5{top:-1.25rem}.z-10{z-index:10}.z-20{z-index:20}.z-40{z-index:40}.z-50{z-index:50}.mb-2{margin-bottom:0.5rem}.mb-4{margin-bottom:1rem}.mb-0\.5{margin-bottom:0.125rem}.mb-1{margin-bottom:0.25rem}.mb-6{margin-bottom:1.5rem}.ml-2{margin-left:0.5rem}.mr-1{margin-right:0.25rem}.mr-2{margin-right:0.5rem}.mt-0\.5{margin-top:0.125rem}.mt-1{margin-top:0.25rem}.mt-8{margin-top:2rem}.mt-auto{margin-top:auto}.mt-6{margin-top:1.5rem}.mb-3{margin-bottom:0.75rem}.mb-5{margin-bottom:1.25rem}.mb-8{margin-bottom:2rem}.mt-3{margin-top:0.75rem}.line-clamp-2{overflow:hidden;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2}.flex{display:flex}.inline-flex{display:inline-flex}.grid{display:grid}.h-screen{height:100vh}.h-full{height:100%}.h-10{height:2.5rem}.h-16{height:4rem}.h-7{height:1.75rem}.h-8{height:2rem}.h-\[22px\]{height:22px}.h-24{height:6rem}.h-\[1px\]{height:1px}.min-h-\[9rem\]{min-height:9rem}.min-h-full{min-height:100%}.w-10{width:2.5rem}.w-7{width:1.75rem}.w-8{width:2rem}.w-\[22px\]{width:22px}.w-\[4\.5rem\]{width:4.5rem}.w-full{width:100%}.w-1\/3{width:33.333333%}.w-24{width:6rem}.min-w-0{min-width:0px}.min-w-\[4\.5rem\]{min-width:4.5rem}.min-w-\[60px\]{min-width:60px}.max-w-sm{max-width:24rem}.flex-1{flex:1 1 0%}.flex-shrink-0{flex-shrink:0}.shrink-0{flex-shrink:0}.rotate-180{--tw-rotate:180deg;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.scale-105{--tw-scale-x:1.05;--tw-scale-y:1.05;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.transform{transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}@keyframes bounce{0%, 100%{transform:translateY(-25%);animation-timing-function:cubic-bezier(0.8,0,1,1)}50%{transform:none;animation-timing-function:cubic-bezier(0,0,0.2,1)}}.animate-bounce{animation:bounce 1s infinite}.cursor-pointer{cursor:pointer}.snap-x{scroll-snap-type:x var(--tw-scroll-snap-strictness)}.snap-center{scroll-snap-align:center}.grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.flex-row{flex-direction:row}.flex-col{flex-direction:column}.flex-wrap{flex-wrap:wrap}.items-start{align-items:flex-start}.items-end{align-items:flex-end}.items-center{align-items:center}.items-baseline{align-items:baseline}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-1{gap:0.25rem}.gap-1\.5{gap:0.375rem}.gap-2{gap:0.5rem}.gap-3{gap:0.75rem}.gap-4{gap:1rem}.gap-x-2{column-gap:0.5rem}.gap-y-1{row-gap:0.25rem}.space-x-3 > :not([hidden]) ~ :not([hidden]){--tw-space-x-reverse:0;margin-right:calc(0.75rem * var(--tw-space-x-reverse));margin-left:calc(0.75rem * calc(1 - var(--tw-space-x-reverse)))}.space-y-8 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(2rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(2rem * var(--tw-space-y-reverse))}.space-y-4 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1rem * var(--tw-space-y-reverse))}.space-y-3 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.75rem * var(--tw-space-y-reverse))}.overflow-hidden{overflow:hidden}.overflow-x-auto{overflow-x:auto}.overflow-y-auto{overflow-y:auto}.truncate{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.whitespace-nowrap{white-space:nowrap}.break-words{overflow-wrap:break-word}.rounded{border-radius:0.25rem}.rounded-2xl{border-radius:1rem}.rounded-3xl{border-radius:1.5rem}.rounded-full{border-radius:9999px}.rounded-lg{border-radius:0.5rem}.rounded-md{border-radius:0.375rem}.rounded-xl{border-radius:0.75rem}.rounded-\[2rem\]{border-radius:2rem}.rounded-t-\[2rem\]{border-top-left-radius:2rem;border-top-right-radius:2rem}.border{border-width:1px}.border-2{border-width:2px}.border-\[3px\]{border-width:3px}.border-b{border-bottom-width:1px}.border-l-2{border-left-width:2px}.border-t{border-top-width:1px}.border-dashed{border-style:dashed}.border-none{border-style:none}.border-\[\#F8FAFC\]{--tw-border-opacity:1;border-color:rgb(248 250 252 / var(--tw-border-opacity, 1))}.border-blue-100{--tw-border-opacity:1;border-color:rgb(219 234 254 / var(--tw-border-opacity, 1))}.border-gray-100{--tw-border-opacity:1;border-color:rgb(243 244 246 / var(--tw-border-opacity, 1))}.border-gray-200{--tw-border-opacity:1;border-color:rgb(229 231 235 / var(--tw-border-opacity, 1))}.border-gray-300{--tw-border-opacity:1;border-color:rgb(209 213 219 / var(--tw-border-opacity, 1))}.border-gray-50{--tw-border-opacity:1;border-color:rgb(249 250 251 / var(--tw-border-opacity, 1))}.border-orange-100{--tw-border-opacity:1;border-color:rgb(255 237 213 / var(--tw-border-opacity, 1))}.border-transparent{border-color:transparent}.border-white\/30{border-color:rgb(255 255 255 / 0.3)}.border-white\/50{border-color:rgb(255 255 255 / 0.5)}.border-yellow-100{--tw-border-opacity:1;border-color:rgb(254 249 195 / var(--tw-border-opacity, 1))}.border-yellow-100\/60{border-color:rgb(254 249 195 / 0.6)}.border-green-100{--tw-border-opacity:1;border-color:rgb(220 252 231 / var(--tw-border-opacity, 1))}.border-blue-50{--tw-border-opacity:1;border-color:rgb(239 246 255 / var(--tw-border-opacity, 1))}.border-green-50{--tw-border-opacity:1;border-color:rgb(240 253 244 / var(--tw-border-opacity, 1))}.border-indigo-50{--tw-border-opacity:1;border-color:rgb(238 242 255 / var(--tw-border-opacity, 1))}.border-orange-50{--tw-border-opacity:1;border-color:rgb(255 247 237 / var(--tw-border-opacity, 1))}.border-red-100{--tw-border-opacity:1;border-color:rgb(254 226 226 / var(--tw-border-opacity, 1))}.border-sky-100{--tw-border-opacity:1;border-color:rgb(224 242 254 / var(--tw-border-opacity, 1))}.border-sky-50{--tw-border-opacity:1;border-color:rgb(240 249 255 / var(--tw-border-opacity, 1))}.bg-\[\#F8FAFC\]{--tw-bg-opacity:1;background-color:rgb(248 250 252 / var(--tw-bg-opacity, 1))}.bg-blue-100{--tw-bg-opacity:1;background-color:rgb(219 234 254 / var(--tw-bg-opacity, 1))}.bg-blue-50{--tw-bg-opacity:1;background-color:rgb(239 246 255 / var(--tw-bg-opacity, 1))}.bg-gray-100{--tw-bg-opacity:1;background-color:rgb(243 244 246 / var(--tw-bg-opacity, 1))}.bg-gray-100\/50{background-color:rgb(243 244 246 / 0.5)}.bg-gray-400{--tw-bg-opacity:1;background-color:rgb(156 163 175 / var(--tw-bg-opacity, 1))}.bg-gray-50{--tw-bg-opacity:1;background-color:rgb(249 250 251 / var(--tw-bg-opacity, 1))}.bg-indigo-100{--tw-bg-opacity:1;background-color:rgb(224 231 255 / var(--tw-bg-opacity, 1))}.bg-kr-text{--tw-bg-opacity:1;background-color:rgb(30 41 59 / var(--tw-bg-opacity, 1))}.bg-orange-100{--tw-bg-opacity:1;background-color:rgb(255 237 213 / var(--tw-bg-opacity, 1))}.bg-orange-50{--tw-bg-opacity:1;background-color:rgb(255 247 237 / var(--tw-bg-opacity, 1))}.bg-red-50{--tw-bg-opacity:1;background-color:rgb(254 242 242 / var(--tw-bg-opacity, 1))}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity, 1))}.bg-white\/30{background-color:rgb(255 255 255 / 0.3)}.bg-white\/50{background-color:rgb(255 255 255 / 0.5)}.bg-white\/95{background-color:rgb(255 255 255 / 0.95)}.bg-yellow-50{--tw-bg-opacity:1;background-color:rgb(254 252 232 / var(--tw-bg-opacity, 1))}.bg-green-50{--tw-bg-opacity:1;background-color:rgb(240 253 244 / var(--tw-bg-opacity, 1))}.bg-black\/40{background-color:rgb(0 0 0 / 0.4)}.bg-blue-200{--tw-bg-opacity:1;background-color:rgb(191 219 254 / var(--tw-bg-opacity, 1))}.bg-blue-50\/50{background-color:rgb(239 246 255 / 0.5)}.bg-blue-500{--tw-bg-opacity:1;background-color:rgb(59 130 246 / var(--tw-bg-opacity, 1))}.bg-orange-200{--tw-bg-opacity:1;background-color:rgb(254 215 170 / var(--tw-bg-opacity, 1))}.bg-orange-50\/50{background-color:rgb(255 247 237 / 0.5)}.bg-orange-500{--tw-bg-opacity:1;background-color:rgb(249 115 22 / var(--tw-bg-opacity, 1))}.bg-red-100{--tw-bg-opacity:1;background-color:rgb(254 226 226 / var(--tw-bg-opacity, 1))}.bg-sky-200{--tw-bg-opacity:1;background-color:rgb(186 230 253 / var(--tw-bg-opacity, 1))}.bg-slate-800{--tw-bg-opacity:1;background-color:rgb(30 41 59 / var(--tw-bg-opacity, 1))}.bg-white\/60{background-color:rgb(255 255 255 / 0.6)}.bg-gradient-to-br{background-image:linear-gradient(to bottom right, var(--tw-gradient-stops))}.from-sky-50{--tw-gradient-from:#f0f9ff var(--tw-gradient-from-position);--tw-gradient-to:rgb(240 249 255 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.to-white{--tw-gradient-to:#fff var(--tw-gradient-to-position)}.p-1{padding:0.25rem}.p-2{padding:0.5rem}.p-4{padding:1rem}.p-6{padding:1.5rem}.p-5{padding:1.25rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.px-1\.5{padding-left:0.375rem;padding-right:0.375rem}.px-2{padding-left:0.5rem;padding-right:0.5rem}.px-4{padding-left:1rem;padding-right:1rem}.px-5{padding-left:1.25rem;padding-right:1.25rem}.py-0\.5{padding-top:0.125rem;padding-bottom:0.125rem}.py-1{padding-top:0.25rem;padding-bottom:0.25rem}.py-2{padding-top:0.5rem;padding-bottom:0.5rem}.py-3{padding-top:0.75rem;padding-bottom:0.75rem}.py-4{padding-top:1rem;padding-bottom:1rem}.py-6{padding-top:1.5rem;padding-bottom:1.5rem}.px-3{padding-left:0.75rem;padding-right:0.75rem}.px-1{padding-left:0.25rem;padding-right:0.25rem}.py-1\.5{padding-top:0.375rem;padding-bottom:0.375rem}.pb-10{padding-bottom:2.5rem}.pb-2{padding-bottom:0.5rem}.pl-4{padding-left:1rem}.pl-6{padding-left:1.5rem}.pr-16{padding-right:4rem}.pr-\[4\.5rem\]{padding-right:4.5rem}.pt-2{padding-top:0.5rem}.text-center{text-align:center}.font-mono{font-family:"Roboto Mono", monospace}.text-5xl{font-size:3rem;line-height:1}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-xs{font-size:0.75rem;line-height:1rem}.text-2xl{font-size:1.5rem;line-height:2rem}.text-\[10px\]{font-size:10px}.text-\[11px\]{font-size:11px}.text-\[17px\]{font-size:17px}.text-\[9px\]{font-size:9px}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-3xl{font-size:1.875rem;line-height:2.25rem}.text-4xl{font-size:2.25rem;line-height:2.5rem}.font-bold{font-weight:700}.font-medium{font-weight:500}.uppercase{text-transform:uppercase}.leading-relaxed{line-height:1.625}.leading-snug{line-height:1.375}.tracking-tight{letter-spacing:-0.025em}.tracking-wide{letter-spacing:0.025em}.tracking-tighter{letter-spacing:-0.05em}.text-kr-text{--tw-text-opacity:1;color:rgb(30 41 59 / var(--tw-text-opacity, 1))}.text-blue-400{--tw-text-opacity:1;color:rgb(96 165 250 / var(--tw-text-opacity, 1))}.text-gray-700{--tw-text-opacity:1;color:rgb(55 65 81 / var(--tw-text-opacity, 1))}.text-gray-400{--tw-text-opacity:1;color:rgb(156 163 175 / var(--tw-text-opacity, 1))}.text-blue-300{--tw-text-opacity:1;color:rgb(147 197 253 / var(--tw-text-opacity, 1))}.text-blue-500{--tw-text-opacity:1;color:rgb(59 130 246 / var(--tw-text-opacity, 1))}.text-blue-600{--tw-text-opacity:1;color:rgb(37 99 235 / var(--tw-text-opacity, 1))}.text-gray-500{--tw-text-opacity:1;color:rgb(107 114 128 / var(--tw-text-opacity, 1))}.text-gray-600{--tw-text-opacity:1;color:rgb(75 85 99 / var(--tw-text-opacity, 1))}.text-gray-800{--tw-text-opacity:1;color:rgb(31 41 55 / var(--tw-text-opacity, 1))}.text-indigo-500{--tw-text-opacity:1;color:rgb(99 102 241 / var(--tw-text-opacity, 1))}.text-kr-primary{--tw-text-opacity:1;color:rgb(71 85 105 / var(--tw-text-opacity, 1))}.text-kr-sub{--tw-text-opacity:1;color:rgb(100 116 139 / var(--tw-text-opacity, 1))}.text-orange-400{--tw-text-opacity:1;color:rgb(251 146 60 / var(--tw-text-opacity, 1))}.text-orange-600{--tw-text-opacity:1;color:rgb(234 88 12 / var(--tw-text-opacity, 1))}.text-red-500{--tw-text-opacity:1;color:rgb(239 68 68 / var(--tw-text-opacity, 1))}.text-slate-800{--tw-text-opacity:1;color:rgb(30 41 59 / var(--tw-text-opacity, 1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.text-yellow-400{--tw-text-opacity:1;color:rgb(250 204 21 / var(--tw-text-opacity, 1))}.text-yellow-600{--tw-text-opacity:1;color:rgb(202 138 4 / var(--tw-text-opacity, 1))}.text-green-600{--tw-text-opacity:1;color:rgb(22 163 74 / var(--tw-text-opacity, 1))}.text-cyan-500{--tw-text-opacity:1;color:rgb(6 182 212 / var(--tw-text-opacity, 1))}.text-pink-400{--tw-text-opacity:1;color:rgb(244 114 182 / var(--tw-text-opacity, 1))}.text-orange-500{--tw-text-opacity:1;color:rgb(249 115 22 / var(--tw-text-opacity, 1))}.text-red-600{--tw-text-opacity:1;color:rgb(220 38 38 / var(--tw-text-opacity, 1))}.text-red-800{--tw-text-opacity:1;color:rgb(153 27 27 / var(--tw-text-opacity, 1))}.text-sky-500{--tw-text-opacity:1;color:rgb(14 165 233 / var(--tw-text-opacity, 1))}.text-sky-600{--tw-text-opacity:1;color:rgb(2 132 199 / var(--tw-text-opacity, 1))}.text-slate-400{--tw-text-opacity:1;color:rgb(148 163 184 / var(--tw-text-opacity, 1))}.text-slate-900{--tw-text-opacity:1;color:rgb(15 23 42 / var(--tw-text-opacity, 1))}.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.opacity-80{opacity:0.8}.opacity-90{opacity:0.9}.opacity-50{opacity:0.5}.shadow-md{--tw-shadow:0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-sm{--tw-shadow:0 1px 2px 0 rgb(0 0 0 / 0.05);--tw-shadow-colored:0 1px 2px 0 var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-lg{--tw-shadow:0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.outline-none{outline:2px solid transparent;outline-offset:2px}.blur-2xl{--tw-blur:blur(40px);filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.drop-shadow-sm{--tw-drop-shadow:drop-shadow(0 1px 1px rgb(0 0 0 / 0.05));filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.backdrop-blur-md{--tw-backdrop-blur:blur(12px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.backdrop-blur-sm{--tw-backdrop-blur:blur(4px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.transition-all{transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-colors{transition-property:color, background-color, border-color, fill, stroke, -webkit-text-decoration-color;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, -webkit-text-decoration-color;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-transform{transition-property:transform;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.duration-300{transition-duration:300ms}.hover\:bg-blue-100:hover{--tw-bg-opacity:1;background-color:rgb(219 234 254 / var(--tw-bg-opacity, 1))}.hover\:bg-gray-100:hover{--tw-bg-opacity:1;background-color:rgb(243 244 246 / var(--tw-bg-opacity, 1))}.hover\:bg-orange-100:hover{--tw-bg-opacity:1;background-color:rgb(255 237 213 / var(--tw-bg-opacity, 1))}.hover\:bg-red-100:hover{--tw-bg-opacity:1;background-color:rgb(254 226 226 / var(--tw-bg-opacity, 1))}.hover\:text-gray-600:hover{--tw-text-opacity:1;color:rgb(75 85 99 / var(--tw-text-opacity, 1))}.hover\:shadow-lg:hover{--tw-shadow:0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.active\:scale-90:active{--tw-scale-x:.9;--tw-scale-y:.9;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.active\:scale-95:active{--tw-scale-x:.95;--tw-scale-y:.95;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.active\:scale-\[0\.99\]:active{--tw-scale-x:0.99;--tw-scale-y:0.99;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.active\:bg-blue-100:active{--tw-bg-opacity:1;background-color:rgb(219 234 254 / var(--tw-bg-opacity, 1))}.active\:bg-gray-50:active{--tw-bg-opacity:1;background-color:rgb(249 250 251 / var(--tw-bg-opacity, 1))}.active\:bg-gray-100:active{--tw-bg-opacity:1;background-color:rgb(243 244 246 / var(--tw-bg-opacity, 1))}.active\:bg-red-200:active{--tw-bg-opacity:1;background-color:rgb(254 202 202 / var(--tw-bg-opacity, 1))}@media (min-width: 640px){.sm\:items-center{align-items:center}.sm\:rounded-\[2rem\]{border-radius:2rem}.sm\:pb-6{padding-bottom:1.5rem}}</style></head>
+<body class="text-kr-text antialiased">
+
+<!-- Vue Mounting Point -->
+<div id="app" class="app-container flex flex-col h-screen overflow-hidden"><div class="loading-overlay text-center px-6"><i class="fa-solid fa-plane-up text-5xl text-blue-400 mb-4 animate-bounce"></i><p class="font-bold text-gray-700 text-lg mb-2">正在載入您的行程...</p></div></div>
+
+<!-- Main Vue Template -->
+<template id="app-template">
+    <div class="flex flex-col h-full overflow-hidden relative">
+        <!-- Loading Screen -->
+        <div v-if="isLoading" class="loading-overlay text-center px-6">
+            <i class="fa-solid fa-cloud-arrow-up text-5xl text-blue-400 mb-4 animate-bounce"></i>
+            <p class="font-bold text-gray-700 text-lg mb-2">正在同步雲端行程...</p>
+            <p class="text-xs text-gray-400">2026 北海道旭川之旅</p>
+        </div>
+
+        <!-- Header -->
+        <header v-if="!isLoading" class="bg-white/95 backdrop-blur-md z-40 sticky top-0 border-b border-gray-100 shrink-0 shadow-sm flex flex-col">
+            <!-- Top Bar -->
+            <div class="px-5 py-3 flex justify-between items-center">
+                <div class="flex-1 min-w-0 mr-2">
+                    <h1 class="text-lg font-bold tracking-tight text-kr-text flex items-center gap-2 truncate">
+                        Asahikawa-2026
+                    </h1>
+                    <div class="flex items-center gap-2 text-xs text-kr-sub font-medium mt-0.5 overflow-hidden">
+                        <span class="whitespace-nowrap font-bold text-blue-600">{{ headerDateText }}</span>
+                        <span v-if="currentDayWeather" class="flex items-center gap-1 bg-gray-100 text-gray-500 px-2 py-0.5 rounded-md shrink-0 transition-all duration-300">
+                            <i :class="currentDayWeather.icon"></i> {{ currentDayWeather.text }} {{ currentDayWeather.temp }}
+                        </span>
+                    </div>
+                </div>
+                <div class="flex flex-col items-end gap-1 shrink-0">
+                    <div class="text-[10px] flex items-center px-2 py-1 rounded-full border transition-colors duration-300" :class="saveStatus === 'saved' ? 'bg-green-50 border-green-100 text-green-600' : (saveStatus === 'saving' ? 'bg-yellow-50 border-yellow-100 text-yellow-600' : 'bg-gray-50 border-gray-100 text-gray-400')">
+                        <i v-if="saveStatus === 'saving'" class="fa-solid fa-circle-notch fa-spin mr-1"></i>
+                        <i v-else-if="saveStatus === 'saved'" class="fa-solid fa-cloud-check mr-1"></i>
+                        <i v-else="" class="fa-solid fa-floppy-disk mr-1"></i> 
+                        {{ saveStatusText }}
+                    </div>
+                    <div class="w-7 h-7 rounded-full bg-gray-50 flex items-center justify-center text-kr-primary shadow-sm active:scale-95 transition-transform cursor-pointer hover:bg-gray-100" @click="resetDataConfirm" title="重置行程">
+                        <i class="fa-solid fa-rotate-right text-xs"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tabs -->
+            <div class="px-2 pb-2">
+                <div class="flex bg-gray-100/50 p-1 rounded-xl">
+                    <button v-for="tab in tabs" :key="tab.id" @click="currentTab = tab.id" :class="currentTab === tab.id ? 'bg-white text-kr-text shadow-sm' : 'text-gray-400 hover:text-gray-600'" class="flex-1 py-2 rounded-lg text-xs font-bold transition-all flex items-center justify-center gap-1.5">
+                        <i :class="tab.icon"></i>
+                        <span>{{ tab.name }}</span>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Date Selector (Only for itinerary) -->
+            <div v-if="currentTab === 'itinerary'" class="border-t border-gray-50">
+                <div class="flex overflow-x-auto no-scrollbar py-3 px-4 space-x-3 snap-x">
+                    <button v-for="(day, index) in itinerary" :key="day.day" @click="activeDayIndex = index" class="flex-shrink-0 snap-center flex flex-col items-center justify-center min-w-[4.5rem] h-16 rounded-2xl transition-all duration-300 border relative overflow-hidden" :class="activeDayIndex === index ? 'bg-kr-text text-white border-transparent shadow-md transform scale-105' : 'bg-gray-50 text-gray-400 border-gray-100'">
+                        <span class="text-[9px] font-bold uppercase tracking-wide opacity-80 mb-0.5">Day {{ day.day }}</span>
+                        <span class="text-xs font-bold mb-1">{{ day.date.split('-')[1] }}/{{ day.date.split('-')[2] }}</span>
+                        <i v-if="dailyForecasts[index]" :class="dailyForecasts[index].icon" class="text-xs opacity-90"></i>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main v-if="!isLoading" class="flex-1 overflow-y-auto no-scrollbar pb-10 bg-[#F8FAFC]">
+            
+            <!-- Tab 1: Itinerary -->
+            <div v-if="currentTab === 'itinerary'" class="flex flex-col min-h-full">
+                <div class="px-5 py-6">
+                    <div class="flex justify-between items-start mb-6">
+                        <div>
+                            <h2 class="text-2xl font-bold text-gray-800">{{ itinerary[activeDayIndex]?.title || '今日行程' }}</h2>
+                            <p class="text-sm text-kr-sub mt-1"><i class="fa-regular fa-calendar mr-1"></i> {{ itinerary[activeDayIndex]?.weekday }}</p>
+                        </div>
+                        <button @click="openDayMap" class="bg-blue-50 text-blue-600 px-4 py-2 rounded-xl text-sm font-bold shadow-sm active:bg-blue-100 flex items-center gap-2 border border-blue-100">
+                            <i class="fa-solid fa-map-location-dot"></i> 路徑
+                        </button>
+                    </div>
+
+                    <!-- Timeline -->
+                    <div class="relative pl-4 border-l-2 border-gray-200 space-y-8 ml-2">
+                        <div v-if="!itinerary[activeDayIndex]?.activities || itinerary[activeDayIndex]?.activities.length === 0" class="py-10 text-center text-gray-400 text-sm">
+                            點擊下方按鈕新增第一個行程
+                        </div>
+                        <div v-for="(item, idx) in itinerary[activeDayIndex]?.activities" :key="idx" class="relative pl-6 pb-2">
+                            <!-- Timeline Dot -->
+                            <div class="absolute -left-[12px] top-6 w-[22px] h-[22px] rounded-full border-[3px] border-[#F8FAFC] shadow-sm z-10 flex items-center justify-center text-[9px] font-bold text-white bg-gray-400">
+                                {{ idx + 1 }}
+                            </div>
+                            
+                            <!-- Card -->
+                            <div class="bg-white rounded-3xl soft-shadow border border-gray-50 overflow-hidden active:scale-[0.99] transition-transform flex flex-row min-h-[9rem] relative group">
+                                <!-- Left Column -->
+                                <div class="w-[4.5rem] shrink-0 flex flex-col items-center justify-center relative pattern-bg gap-2" :class="getCardBgClass(item.type)">
+                                    <div class="w-10 h-10 rounded-full bg-white/30 backdrop-blur-sm flex items-center justify-center border border-white/50 relative z-10 text-lg shadow-sm">
+                                        <i :class="getTypeIcon(item.type)"></i>
+                                    </div>
+                                    <div class="text-slate-800 text-[11px] font-bold font-mono relative z-10 bg-white/50 px-1.5 py-0.5 rounded backdrop-blur-md shadow-sm border border-white/30">
+                                        {{ item.time }}
+                                    </div>
+                                </div>
+
+                                <!-- Right Content -->
+                                <div class="flex-1 p-4 flex flex-col gap-1.5 min-w-0 relative">
+                                    <div class="flex justify-between items-start">
+                                        <!-- Adjusted pr-[4.5rem] to prevent button overlap -->
+                                        <h3 class="font-bold text-[17px] text-gray-800 leading-snug break-words line-clamp-2 pr-[4.5rem]">{{ item.name }}</h3>
+                                        <!-- Edit Buttons -->
+                                        <div class="flex gap-1 absolute top-2 right-2 z-20">
+                                            <button @click.stop="editItemDirect(activeDayIndex, idx)" class="w-8 h-8 text-blue-500 bg-blue-50 hover:bg-blue-100 flex items-center justify-center rounded-full transition-colors shadow-sm active:scale-90">
+                                                <i class="fa-solid fa-pen text-xs"></i>
+                                            </button>
+                                            <button @click.stop="deleteItemDirect(activeDayIndex, idx)" class="w-8 h-8 text-red-500 bg-red-50 hover:bg-red-100 flex items-center justify-center rounded-full transition-colors shadow-sm active:scale-90">
+                                                <i class="fa-solid fa-trash-can text-xs"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex flex-wrap items-center gap-x-2 gap-y-1 mt-0.5 pr-16">
+                                        <div v-if="item.openTime" class="inline-flex items-center gap-1.5 bg-blue-50 text-blue-600 text-[10px] px-2 py-0.5 rounded-full font-medium border border-blue-100 shrink-0">
+                                            <i class="fa-regular fa-clock"></i> {{ item.openTime }}
+                                        </div>
+                                        <div v-if="item.address" class="text-[10px] text-gray-400 flex items-center gap-1 min-w-0">
+                                            <i class="fa-solid fa-location-dot shrink-0 text-[9px]"></i>
+                                            <span class="truncate">{{ item.address }}</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div v-if="item.desc" class="bg-yellow-50 p-2 rounded-lg border border-yellow-100/60 mt-1">
+                                        <div class="flex gap-2 items-start">
+                                            <i class="fa-solid fa-pen text-yellow-400 text-[10px] mt-0.5 shrink-0"></i>
+                                            <p class="text-xs text-gray-600 leading-relaxed break-words">{{ item.desc }}</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex gap-2 mt-auto pt-2 border-t border-gray-50 relative z-10">
+                                        <button v-if="item.link" @click="openLink(item.link)" class="flex-1 bg-orange-50 text-orange-600 rounded-lg py-2 px-2 flex items-center justify-center gap-1.5 font-bold text-[11px] hover:bg-orange-100 transition-colors border border-orange-100">
+                                            <i class="fa-solid fa-bus"></i> {{ item.linkText || '連結' }}
+                                        </button>
+                                        <button v-else-if="item.address" @click="openGoogleMapsNav(item.address)" class="flex-1 bg-blue-50 text-blue-600 rounded-lg py-2 px-2 flex items-center justify-center gap-1.5 font-bold text-[11px] hover:bg-blue-100 transition-colors border border-blue-100">
+                                            <i class="fa-solid fa-location-arrow"></i> 導航
+                                        </button>
+                                        <button v-if="item.address" @click="openMap(item.address)" class="w-10 bg-gray-50 text-gray-500 rounded-lg flex items-center justify-center hover:bg-gray-100 transition-colors border border-gray-100 active:scale-95">
+                                            <i class="fa-solid fa-map text-[10px]"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button @click="openAddModal" class="mt-8 w-full py-4 rounded-3xl border-2 border-dashed border-gray-300 text-gray-400 text-sm font-bold flex justify-center items-center gap-2 bg-white/50 active:bg-gray-50">
+                        <i class="fa-solid fa-plus"></i> 新增行程
+                    </button>
+                </div>
+            </div>
+
+            <!-- Tab 2: Expenses -->
+            <div v-if="currentTab === 'expenses'" class="p-5 min-h-full">
+                <!-- Currency Calculator -->
+                <div class="bg-white p-5 rounded-2xl soft-shadow mb-6 border border-yellow-50">
+                    <div class="flex items-center gap-2 mb-3 text-yellow-600">
+                        <i class="fa-solid fa-coins text-xl"></i>
+                        <span class="font-bold">匯率試算</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <div class="flex-1 bg-gray-50 rounded-xl px-3 py-2 border border-gray-100 focus-within:border-yellow-200 transition-colors">
+                            <div class="text-[10px] text-gray-400 font-bold mb-1">{{ tripMeta.currencyCode }}</div>
+                            <input type="number" v-model="calcAmountForeign" @input="updateFromForeign" class="w-full bg-transparent font-bold outline-none text-gray-800" placeholder="0">
+                        </div>
+                        <i class="fa-solid fa-right-left text-gray-300 text-xs"></i>
+                        <div class="flex-1 bg-gray-50 rounded-xl px-3 py-2 border border-gray-100 focus-within:border-yellow-200 transition-colors">
+                            <div class="text-[10px] text-gray-400 font-bold mb-1">TWD</div>
+                            <input type="number" v-model="calcAmountTwd" @input="updateFromTwd" class="w-full bg-transparent font-bold outline-none text-gray-800" placeholder="0">
+                        </div>
+                    </div>
+                    <div class="text-right mt-2 text-[10px] text-gray-400">
+                         1 {{ tripMeta.currencyCode }} ≈ {{ exchangeRate.toFixed(4) }} TWD (可點擊頭像修改)
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-slate-800 to-slate-900 text-white rounded-[2rem] p-6 shadow-xl mb-6 relative overflow-hidden" @click="showRateModal=true">
+                    <div class="absolute -right-10 -top-10 w-40 h-40 bg-white/10 rounded-full blur-3xl"></div>
+                    <div class="relative z-10 cursor-pointer">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <p class="text-slate-400 text-xs font-bold uppercase tracking-wider">總支出 (Total)</p>
+                                <h2 class="text-3xl font-bold mt-1">{{ tripMeta.currencyCode }} {{ formatNumber(totalExpense) }}</h2>
+                                <p class="text-slate-400 text-sm mt-1">約 NT$ {{ formatNumber(Math.round(totalExpense * exchangeRate)) }}</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-3" @click.stop="">
+                            <button @click="showAddExpenseModal = true" class="flex-1 bg-white text-slate-900 py-3 rounded-xl text-sm font-bold shadow-sm active:bg-gray-100">
+                                <i class="fa-solid fa-camera mr-1"></i> 記帳
+                            </button>
+                            <button @click="showSettleModal = true" class="flex-1 bg-white/10 text-white py-3 rounded-xl text-sm font-bold active:bg-white/20 border border-white/10">
+                                <i class="fa-solid fa-calculator mr-1"></i> 結算
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="space-y-4 pb-20">
+                    <div v-if="expenses.length === 0" class="text-center py-10 text-gray-400">
+                        <i class="fa-solid fa-receipt text-3xl mb-3"></i>
+                        <p class="text-sm">尚未新增任何消費</p>
+                    </div>
+                    <div v-for="(exp, index) in expenses" :key="index" class="bg-white p-4 rounded-2xl soft-shadow flex gap-4 items-center">
+                        <div class="w-14 h-14 rounded-xl bg-gray-100 flex-shrink-0 overflow-hidden border border-gray-100 flex items-center justify-center cursor-pointer active:opacity-80" @click="viewImage(exp.image)">
+                            <img v-if="exp.image" :src="exp.image" class="w-full h-full object-cover">
+                            <i v-else="" class="fa-solid fa-image text-gray-300"></i>
+                        </div>
+                        <div class="flex-1 min-w-0">
+                            <div class="flex justify-between items-start">
+                                <h3 class="font-bold text-gray-800 text-sm truncate">{{ exp.item }}</h3>
+                                <button @click="deleteExpense(index)" class="text-gray-300 px-2 active:text-red-500"><i class="fa-solid fa-xmark"></i></button>
+                            </div>
+                            <div class="flex justify-between items-end mt-1">
+                                <div>
+                                    <div class="text-xs text-gray-400">{{ exp.payer }} 付款</div>
+                                    <div class="text-[10px] text-gray-400 mt-0.5">分攤: {{ exp.involved.length }} 人</div>
+                                </div>
+                                <div class="text-right">
+                                    <div class="font-bold text-gray-800 text-sm">{{ tripMeta.currencyCode }}{{ formatNumber(exp.amount) }}</div>
+                                    <div class="text-[10px] text-gray-400">NT$ {{ formatNumber(Math.round(exp.amount * exchangeRate)) }}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab 3: Lists -->
+            <div v-if="currentTab === 'lists'" class="p-5 min-h-full">
+                <div class="mb-4">
+                    <span v-if="mode === 'cloud'" class="inline-block bg-yellow-100 text-yellow-800 text-[10px] font-bold px-2 py-1 rounded-full mb-2">
+                        <i class="fa-solid fa-user-lock mr-1"></i> 個人隱私資料
+                    </span>
+                </div>
+                <div class="mb-8">
+                    <h3 class="font-bold text-lg text-gray-800 mb-4 flex items-center"><i class="fa-solid fa-clipboard-check mr-2 text-kr-accent"></i>行前準備</h3>
+                    <!-- Add Checklist Item -->
+                    <div class="flex gap-2 mb-4">
+                        <input v-model="newChecklistItem" @keyup.enter="addChecklistItem" placeholder="新增準備項目..." class="flex-1 bg-white border border-gray-200 rounded-xl px-4 py-2 text-sm outline-none focus:border-kr-primary transition-colors">
+                        <button @click="addChecklistItem" class="bg-gray-800 text-white px-4 py-2 rounded-xl text-sm font-bold active:scale-95 transition-transform"><i class="fa-solid fa-plus"></i></button>
+                    </div>
+                    <div class="bg-white rounded-2xl soft-shadow p-2 space-y-1">
+                        <div v-for="(item, idx) in checklist" :key="idx" @click="toggleCheck(idx)" class="flex items-center p-3 rounded-xl transition-colors cursor-pointer active:bg-gray-50 group">
+                            <div class="w-6 h-6 rounded-full border-2 flex items-center justify-center mr-3 transition-colors shrink-0" :class="item.checked ? 'bg-kr-accent border-kr-accent text-white' : 'border-gray-300 text-transparent'">
+                                <i class="fa-solid fa-check text-xs"></i>
+                            </div>
+                            <span :class="item.checked ? 'text-gray-400 line-through' : 'text-gray-700 font-medium'" class="flex-1">{{ item.text }}</span>
+                            <button @click.stop="editChecklistItem(idx)" class="text-gray-300 hover:text-blue-500 opacity-0 group-hover:opacity-100 px-2 transition-opacity">
+                                <i class="fa-solid fa-pen"></i>
+                            </button>
+                            <button @click.stop="deleteChecklistItem(idx)" class="text-gray-300 hover:text-red-500 opacity-0 group-hover:opacity-100 px-2 transition-opacity">
+                                <i class="fa-solid fa-xmark"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="font-bold text-lg text-gray-800 flex items-center"><i class="fa-solid fa-note-sticky mr-2 text-yellow-500"></i>備忘錄</h3>
+                        <button @click="addMemo" class="text-xs bg-gray-100 px-2 py-1 rounded text-gray-600 font-bold active:bg-gray-200">新增</button>
+                    </div>
+                    <div class="space-y-3">
+                        <div v-for="(memo, idx) in memos" :key="idx" class="bg-yellow-50/50 p-4 rounded-2xl border border-yellow-100 relative">
+                            <textarea v-model="memo.text" rows="2" placeholder="輸入記事..." class="w-full bg-transparent resize-none outline-none text-sm text-gray-700"></textarea>
+                            <button @click="removeMemo(idx)" class="absolute top-2 right-2 text-yellow-300 hover:text-yellow-500"><i class="fa-solid fa-xmark"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab 4: Info -->
+            <div v-if="currentTab === 'info'" class="p-5 min-h-full">
+                <!-- Weather Card -->
+                <div v-if="realtimeWeather" class="bg-gradient-to-br from-sky-50 to-white rounded-[2rem] p-5 mb-5 shadow-lg border border-sky-100 flex items-center justify-between relative overflow-hidden">
+                    <div class="absolute -left-5 -top-5 w-24 h-24 bg-sky-200 rounded-full blur-2xl opacity-50"></div>
+                    <div class="relative z-10">
+                        <div class="text-sm font-bold text-gray-500 mb-1 flex items-center gap-1">
+                            <i class="fa-solid fa-location-dot text-sky-500"></i> 旭川現況
+                        </div>
+                        <div class="flex items-baseline gap-2">
+                            <span class="text-5xl font-bold text-gray-800 tracking-tighter">{{ realtimeWeather.temp }}<span class="text-3xl">°</span></span>
+                            <span class="text-xs font-bold text-gray-400 bg-white/60 px-2 py-1 rounded-lg backdrop-blur-sm">
+                                體感 {{ realtimeWeather.feelsLike }}°
+                            </span>
+                        </div>
+                    </div>
+                    <div class="relative z-10 flex flex-col items-end gap-3">
+                        <button @click="openMap(tripMeta.destination)" class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-sky-600 shadow-md active:scale-95 transition-transform hover:shadow-lg border border-sky-50">
+                            <i class="fa-solid fa-map"></i>
+                        </button>
+                         <i v-if="realtimeWeather.isDay" class="fa-solid fa-sun text-4xl text-orange-400 drop-shadow-sm"></i>
+                         <i v-else="" class="fa-solid fa-moon text-4xl text-slate-400 drop-shadow-sm"></i>
+                    </div>
+                </div>
+
+                <!-- Flight Info -->
+                <div class="bg-white rounded-2xl soft-shadow p-5 mb-6 border border-gray-100 relative overflow-hidden">
+                    <h3 class="font-bold text-lg text-gray-800 mb-4 flex items-center"><i class="fa-solid fa-ticket mr-2 text-orange-500"></i>航班資訊</h3>
+                    
+                    <!-- Outbound -->
+                    <div class="bg-orange-50/50 rounded-2xl p-4 mb-3 border border-orange-100">
+                        <div class="flex justify-between items-center mb-3">
+                            <span class="bg-orange-500 text-white text-[10px] font-bold px-2 py-0.5 rounded-full">去程</span>
+                            <span class="text-sm font-bold text-gray-600">3/14 (六)</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <div class="text-center w-1/3">
+                                <div class="text-2xl font-bold text-gray-800">TPE</div>
+                                <div class="text-sm font-bold text-gray-600">08:30</div>
+                            </div>
+                            <div class="flex-1 flex flex-col items-center justify-center px-1">
+                                <span class="text-[10px] text-gray-400 mb-0.5 font-bold">4h 40m</span>
+                                <div class="w-full flex items-center gap-1">
+                                    <div class="h-[1px] bg-orange-200 flex-1"></div>
+                                    <i class="fa-solid fa-plane text-orange-400 text-sm"></i>
+                                    <div class="h-[1px] bg-orange-200 flex-1"></div>
+                                </div>
+                                <span class="text-xs font-bold text-orange-500 mt-0.5">IT238</span>
+                            </div>
+                            <div class="text-center w-1/3">
+                                <div class="text-2xl font-bold text-gray-800">AKJ</div>
+                                <div class="text-sm font-bold text-gray-600">13:10</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Inbound -->
+                    <div class="bg-blue-50/50 rounded-2xl p-4 border border-blue-100">
+                        <div class="flex justify-between items-center mb-3">
+                            <span class="bg-blue-500 text-white text-[10px] font-bold px-2 py-0.5 rounded-full">回程</span>
+                            <span class="text-sm font-bold text-gray-600">3/21 (六)</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <div class="text-center w-1/3">
+                                <div class="text-2xl font-bold text-gray-800">AKJ</div>
+                                <div class="text-sm font-bold text-gray-600">14:10</div>
+                            </div>
+                            <div class="flex-1 flex flex-col items-center justify-center px-1">
+                                <span class="text-[10px] text-gray-400 mb-0.5 font-bold">4h 05m</span>
+                                <div class="w-full flex items-center gap-1">
+                                    <div class="h-[1px] bg-blue-200 flex-1"></div>
+                                    <i class="fa-solid fa-plane text-blue-400 text-sm transform rotate-180"></i>
+                                    <div class="h-[1px] bg-blue-200 flex-1"></div>
+                                </div>
+                                <span class="text-xs font-bold text-blue-500 mt-0.5">IT239</span>
+                            </div>
+                            <div class="text-center w-1/3">
+                                <div class="text-2xl font-bold text-gray-800">TPE</div>
+                                <div class="text-sm font-bold text-gray-600">18:15</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 class="font-bold text-lg text-gray-800 mb-4">實用資訊</h3>
+                <div class="grid grid-cols-2 gap-4 mb-6">
+                    <a href="https://world.jorudan.co.jp/mln/zh-tw/" target="_blank" class="bg-white p-4 rounded-2xl soft-shadow flex flex-col items-center justify-center gap-2 border border-green-50 active:scale-95 transition-transform">
+                        <i class="fa-solid fa-train-subway text-2xl text-green-600"></i>
+                        <span class="text-xs font-bold text-gray-600">乘換案內</span>
+                    </a>
+                    <a :href="`https://www.google.com/maps/search/${tripMeta.destination}`" target="_blank" class="bg-white p-4 rounded-2xl soft-shadow flex flex-col items-center justify-center gap-2 border border-blue-50 active:scale-95 transition-transform">
+                        <i class="fa-solid fa-map-location-dot text-2xl text-blue-500"></i>
+                        <span class="text-xs font-bold text-gray-600">Google Maps</span>
+                    </a>
+                    <a href="https://tabelog.com/tw/hokkaido/A0104/A010401/rstLst/?SrtT=rt" target="_blank" class="bg-white p-4 rounded-2xl soft-shadow flex flex-col items-center justify-center gap-2 border border-orange-50 active:scale-95 transition-transform">
+                        <i class="fa-solid fa-utensils text-2xl text-orange-400"></i>
+                        <span class="text-xs font-bold text-gray-600">Tabelog</span>
+                    </a>
+                    <a :href="`https://translate.google.com/?sl=${tripMeta.langCode}&amp;tl=zh-TW`" target="_blank" class="bg-white p-4 rounded-2xl soft-shadow flex flex-col items-center justify-center gap-2 border border-indigo-50 active:scale-95 transition-transform">
+                        <i class="fa-solid fa-language text-2xl text-indigo-500"></i>
+                        <span class="text-xs font-bold text-gray-600">Google 翻譯</span>
+                    </a>
+                </div>
+
+                <div class="bg-red-50 p-5 rounded-3xl mb-8 border border-red-100">
+                    <h4 class="font-bold text-red-800 mb-3 flex items-center"><i class="fa-solid fa-phone-volume mr-2"></i>緊急聯絡</h4>
+                    <div class="space-y-3 text-sm">
+                        <div class="flex justify-between items-center bg-white/60 p-2 rounded-lg">
+                            <span class="text-gray-700 font-medium">警察局</span>
+                            <a href="tel:110" class="font-bold text-red-600 bg-red-100 px-4 py-1.5 rounded-lg active:bg-red-200">110</a>
+                        </div>
+                        <div class="flex justify-between items-center bg-white/60 p-2 rounded-lg">
+                            <span class="text-gray-700 font-medium">消防/救護</span>
+                            <a href="tel:119" class="font-bold text-red-600 bg-red-100 px-4 py-1.5 rounded-lg active:bg-red-200">119</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-slate-800 text-white p-5 rounded-2xl mb-6 shadow-lg">
+                    <h3 class="font-bold text-lg mb-4 flex items-center"><i class="fa-solid fa-cloud-arrow-down mr-2"></i>備份與還原</h3>
+                    <button @click="downloadHtmlWithData" class="w-full bg-white text-slate-900 font-bold py-4 rounded-xl flex items-center justify-center gap-2 active:bg-gray-100 transition-colors">
+                        <i class="fa-solid fa-download text-xl text-blue-600"></i>
+                        <span>下載本頁為 HTML</span>
+                    </button>
+                    <p class="text-[10px] text-slate-400 mt-3 text-center">
+                        下載後的檔案為「離線版」，包含目前的行程與資料。
+                    </p>
+                </div>
+            </div>
+        </main>
+
+        <!-- Modals -->
+        <transition name="slide-up">
+            <div v-if="showDayMapModal" class="fixed inset-0 z-50 flex flex-col bg-white">
+                <div class="px-5 py-4 border-b border-gray-100 flex justify-between items-center shrink-0">
+                    <h3 class="font-bold text-lg">Day {{ itinerary[activeDayIndex]?.day }} 地圖</h3>
+                    <button @click="showDayMapModal = false" class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center"><i class="fa-solid fa-xmark text-gray-500"></i></button>
+                </div>
+                <div class="flex-1 relative bg-gray-100">
+                    <div id="map" class="w-full h-full"></div>
+                    <button @click="locateMe" class="absolute bottom-6 right-6 z-[1000] bg-white p-3 rounded-full shadow-lg text-blue-500 active:scale-95 transition-transform"><i class="fa-solid fa-crosshairs"></i></button>
+                </div>
+            </div>
+        </transition>
+
+        <transition name="slide-up">
+            <div v-if="showAddExpenseModal" class="fixed inset-0 z-50 flex items-end justify-center sm:items-center">
+                <div class="absolute inset-0 bg-black/40 backdrop-blur-sm" @click="showAddExpenseModal = false"></div>
+                <div class="bg-white w-full max-w-sm rounded-t-[2rem] sm:rounded-[2rem] p-6 z-10 relative pb-10 sm:pb-6 max-h-[90vh] overflow-y-auto no-scrollbar">
+                    <h3 class="font-bold text-xl mb-6 text-gray-800">記下一筆</h3>
+                    <div class="space-y-5">
+                        <div class="flex justify-center">
+                            <div class="w-full h-32 border-2 border-dashed border-gray-200 rounded-2xl flex flex-col items-center justify-center text-gray-400 cursor-pointer bg-gray-50 relative overflow-hidden" @click="$refs.fileInput.click()">
+                                <img v-if="newExpense.image" :src="newExpense.image" class="absolute inset-0 w-full h-full object-cover">
+                                <div v-else="" class="flex flex-col items-center"><i class="fa-solid fa-camera text-2xl mb-2"></i><span class="text-xs font-bold">拍照/上傳</span></div>
+                            </div>
+                            <input type="file" ref="fileInput" accept="image/*" class="hidden" @change="handleImageUpload">
+                        </div>
+                        <input v-model="newExpense.item" placeholder="項目 (如: 晚餐、車票)" class="w-full bg-gray-50 border border-gray-100 rounded-xl p-4 text-gray-800 font-bold outline-none">
+                        <div class="relative">
+                            <span class="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 font-bold">{{ tripMeta.currencyCode }}</span>
+                            <input v-model.number="newExpense.amount" type="number" placeholder="0" class="w-full bg-gray-50 border border-gray-100 rounded-xl p-4 pl-12 text-gray-800 text-xl font-bold outline-none">
+                        </div>
+                        <div class="flex gap-2 overflow-x-auto pb-2 no-scrollbar">
+                            <button v-for="p in people" :key="p" @click="newExpense.payer = p" :class="newExpense.payer === p ? 'bg-slate-800 text-white' : 'bg-gray-50 text-gray-500'" class="px-5 py-3 rounded-xl text-sm font-bold whitespace-nowrap transition-all">{{ p }}</button>
+                        </div>
+                        <div class="grid grid-cols-2 gap-2">
+                            <button v-for="p in people" :key="p" @click="toggleInvolved(p)" :class="newExpense.involved.includes(p) ? 'bg-blue-50 text-blue-600 border-blue-100' : 'bg-gray-50 text-gray-400'" class="px-3 py-3 rounded-xl border text-sm font-bold transition-all flex items-center justify-between">{{ p }} <i v-if="newExpense.involved.includes(p)" class="fa-solid fa-check text-blue-500"></i></button>
+                        </div>
+                    </div>
+                    <div class="flex gap-3 mt-8">
+                        <button @click="showAddExpenseModal = false" class="flex-1 py-4 text-gray-500 font-bold bg-gray-50 rounded-xl">取消</button>
+                        <button @click="addExpense" class="flex-1 bg-slate-800 text-white rounded-xl font-bold shadow-lg">新增</button>
+                    </div>
+                </div>
+            </div>
+        </transition>
+
+        <transition name="slide-up">
+            <div v-if="showAddItemModal" class="fixed inset-0 z-50 flex items-end justify-center sm:items-center">
+                <div class="absolute inset-0 bg-black/40 backdrop-blur-sm" @click="showAddItemModal = false"></div>
+                <div class="bg-white w-full max-w-sm rounded-t-[2rem] sm:rounded-[2rem] p-6 z-10 relative pb-10 sm:pb-6">
+                    <div class="flex justify-between items-center mb-6">
+                        <h3 class="font-bold text-xl text-gray-800">{{ isEditing ? '編輯行程' : '新增行程' }}</h3>
+                        <select v-model="targetDayIndex" class="bg-gray-100 text-sm font-bold text-gray-600 py-1 px-3 rounded-lg border-none outline-none">
+                            <option v-for="(day, index) in itinerary" :key="day.day" :value="index">Day {{ day.day }} ({{ day.date.split('-')[1] }}/{{ day.date.split('-')[2] }})</option>
+                        </select>
+                    </div>
+                    <div class="space-y-4">
+                        <input v-model="newItem.time" type="time" class="w-full bg-gray-50 border border-gray-100 rounded-xl p-4 text-gray-800 font-bold outline-none">
+                        <input v-model="newItem.name" placeholder="名稱 (如: 東京鐵塔)" class="w-full bg-gray-50 border border-gray-100 rounded-xl p-4 text-gray-800 outline-none">
+                        <div class="flex gap-2 overflow-x-auto pb-2">
+                            <button v-for="type in ['food', 'shop', 'visit', 'transport', 'hotel', 'ski']" :key="type" @click="newItem.type = type" :class="newItem.type === type ? 'bg-kr-text text-white' : 'bg-gray-50 text-gray-400'" class="flex-1 min-w-[60px] py-3 rounded-xl text-sm transition-all flex justify-center items-center"><i :class="getTypeIcon(type)"></i></button>
+                        </div>
+                        <input v-model="newItem.address" placeholder="地址 (用於地圖導航)" class="w-full bg-gray-50 border border-gray-100 rounded-xl p-4 text-gray-800 text-sm outline-none">
+                        <input v-model="newItem.desc" placeholder="備註" class="w-full bg-gray-50 border border-gray-100 rounded-xl p-4 text-gray-800 text-sm outline-none">
+                    </div>
+                    <button @click="saveItem" class="w-full mt-6 bg-kr-text text-white py-4 rounded-xl font-bold shadow-lg">{{ isEditing ? '儲存修改' : '新增' }}</button>
+                </div>
+            </div>
+        </transition>
+
+        <transition name="slide-up">
+            <div v-if="showSettleModal" class="fixed inset-0 z-50 flex items-end justify-center sm:items-center">
+                <div class="absolute inset-0 bg-black/40 backdrop-blur-sm" @click="showSettleModal = false"></div>
+                <div class="bg-white w-full max-w-sm rounded-t-[2rem] sm:rounded-[2rem] p-6 z-10 relative pb-10 sm:pb-6">
+                    <h3 class="font-bold text-xl mb-4 text-gray-800">分帳結算結果</h3>
+                    <div class="bg-gray-50 p-5 rounded-2xl space-y-3 max-h-60 overflow-y-auto mb-4 border border-gray-100">
+                        <div v-if="settlements.length === 0" class="text-center text-gray-400 text-sm py-4">目前收支平衡</div>
+                        <div v-for="(s, i) in settlements" :key="i" class="flex justify-between items-center text-sm bg-white p-3 rounded-xl shadow-sm">
+                            <div class="flex items-center gap-3"><span class="font-bold text-gray-600">{{ s.from }}</span><i class="fa-solid fa-arrow-right-long text-gray-300 text-xs"></i><span class="font-bold text-gray-800">{{ s.to }}</span></div>
+                            <span class="font-bold text-blue-600">{{ tripMeta.currencyCode }} {{ formatNumber(s.amount) }}</span>
+                        </div>
+                    </div>
+                    <button @click="showSettleModal = false" class="w-full bg-kr-text text-white py-4 rounded-xl font-bold">關閉</button>
+                </div>
+            </div>
+        </transition>
+
+        <transition name="fade">
+            <div v-if="showRateModal" class="fixed inset-0 z-[60] flex items-center justify-center bg-black/50 backdrop-blur-sm p-8">
+                <div class="bg-white rounded-3xl p-6 w-full max-w-xs text-center shadow-2xl">
+                    <h3 class="font-bold text-lg mb-4">設定匯率 ({{ tripMeta.currencyCode }} → TWD)</h3>
+                    <input v-model.number="exchangeRate" type="number" step="0.0001" class="text-3xl font-bold text-center w-full border-b-2 border-slate-200 outline-none pb-2 mb-6" placeholder="0.23">
+                    <button @click="showRateModal = false" class="w-full bg-slate-800 text-white py-3 rounded-xl font-bold">確認</button>
+                </div>
+            </div>
+        </transition>
+
+        <transition name="fade">
+            <div v-if="showImageViewer" class="fixed inset-0 z-[70] bg-black flex items-center justify-center p-2" @click="showImageViewer = null">
+                <img :src="showImageViewer" class="max-w-full max-h-full rounded-lg object-contain">
+                <button class="absolute top-4 right-4 text-white text-xl p-2"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+        </transition>
+    </div>
+</template>
+
+<script type="module">
+    import { createApp, ref, computed, watch, onMounted, nextTick } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js';
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+    import { getAuth, signInAnonymously, signInWithCustomToken, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+    import { getFirestore, doc, onSnapshot, setDoc, collection, getDoc } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+
+    // --- DATA_START ---
+    const IMPORTED_TRIP_DATA = {
+    "tripMeta": {
+        "startDate": "2026-03-14",
+        "currencyCode": "JPY",
+        "lat": 43.7706,
+        "langCode": "ja",
+        "lng": 142.3649,
+        "destination": "Asahikawa, Hokkaido",
+        "dayCount": 8,
+        "dateRange": "2026-03-14 (8天)"
+    },
+    "itinerary": [
+        {
+            "date": "2026-03-14",
+            "day": 1,
+            "activities": [
+                {
+                    "time": "06:30",
+                    "name": "桃園機場搭飛機 (IT238)",
+                    "type": "transport",
+                    "desc": "8:30的班機，最晚6:30到機場。",
+                    "address": "第一航廈"
+                },
+                {
+                    "lat": 43.7656,
+                    "linkText": "巴士時刻",
+                    "address": "",
+                    "time": "14:00",
+                    "openTime": "08:00-21:00",
+                    "link": "https://www.asahikawa-denkikidou.jp/asahikawa-airport/#",
+                    "name": "機場巴士直達 OMO7",
+                    "desc": "車程約50分鐘 / Bus Stop: ６条９丁目",
+                    "lng": 142.3653,
+                    "type": "transport"
+                },
+                {
+                    "lat": 43.7656,
+                    "desc": "入住: 3/14 (3:00 PM)~3/19 (10:00 AM)",
+                    "openTime": "24小時",
+                    "type": "hotel",
+                    "time": "15:00",
+                    "address": "OMO7 Asahikawa by Hoshino Resorts",
+                    "lng": 142.3653,
+                    "name": "星野集團OMO7 旭川 (Check-in)"
+                },
+                {
+                    "type": "visit",
+                    "lng": 142.36,
+                    "time": "16:00",
+                    "lat": 43.7645,
+                    "name": "旭川市區走走",
+                    "address": "旭川はれて屋台村",
+                    "desc": "到處晃來晃去"
+                },
+                {
+                    "name": "KUSHIDORI Asahikawa Honten",
+                    "time": "18:00",
+                    "lat": 43.765,
+                    "desc": "北海道連鎖串鳥",
+                    "lng": 142.362,
+                    "openTime": "16:30-23:30",
+                    "address": "串鳥 旭川本店",
+                    "type": "food"
+                }
+            ],
+            "weekday": "Sat",
+            "title": "抵達旭川"
+        },
+        {
+            "title": "神居滑雪日 (Day 1)",
+            "weekday": "Sun",
+            "activities": [
+                {
+                    "time": "09:00",
+                    "type": "transport",
+                    "name": "前往神居滑雪場",
+                    "lat": 43.7022,
+                    "linkText": "巴士時刻",
+                    "lng": 142.1932,
+                    "address": "Kamui Ski Links",
+                    "openTime": "08:00-16:30",
+                    "link": "https://www.dohokubus.com/files/santa.pdf",
+                    "desc": "約40分鐘。 8:00 / 8:30 / 9:00 / 9:30 / 10:00 / 10:30"
+                },
+                {
+                    "type": "ski",
+                    "address": "Kamui Ski Links",
+                    "name": "滑雪 (Kamui)",
+                    "lng": 142.1932,
+                    "openTime": "09:00-16:00",
+                    "lat": 43.7022,
+                    "desc": "Day 1: 暖身開滑",
+                    "time": "10:00"
+                },
+                {
+                    "desc": "13:20 / 13:50 / 14:20 / 14:50 / 15:20 / 15:50 / 16:20",
+                    "time": "15:30",
+                    "link": "https://www.dohokubus.com/files/santa.pdf",
+                    "address": "",
+                    "linkText": "道北巴士455",
+                    "name": "結束當日滑雪行程",
+                    "type": "transport"
+                },
+                {
+                    "lat": 43.766,
+                    "time": "18:30",
+                    "desc": "孤獨的美食家名店 (居酒屋)",
+                    "address": "Dokushaku Sanshiro",
+                    "name": "獨酌 三四郎",
+                    "type": "food",
+                    "lng": 142.361,
+                    "openTime": "17:00-22:00"
+                }
+            ],
+            "date": "2026-03-15",
+            "day": 2
+        },
+        {
+            "date": "2026-03-16",
+            "title": "神居滑雪日 (Day 2)",
+            "activities": [
+                {
+                    "openTime": "08:00-16:30",
+                    "lat": 43.7022,
+                    "name": "前往神居滑雪場",
+                    "link": "https://www.dohokubus.com/files/santa.pdf",
+                    "time": "09:00",
+                    "address": "Kamui Ski Links",
+                    "type": "transport",
+                    "lng": 142.1932,
+                    "linkText": "巴士時刻",
+                    "desc": "約40分鐘。 8:00 / 8:30 / 9:00 / 9:30 / 10:00 / 10:30"
+                },
+                {
+                    "type": "ski",
+                    "desc": "Day 2: 深入粉雪",
+                    "time": "10:00",
+                    "address": "Kamui Ski Links",
+                    "lat": 43.7022,
+                    "name": "滑雪 (Kamui)",
+                    "lng": 142.1932,
+                    "openTime": "09:00-16:00"
+                },
+                {
+                    "type": "transport",
+                    "name": "結束當日滑雪行程",
+                    "address": "",
+                    "time": "15:30",
+                    "linkText": "道北巴士455",
+                    "link": "https://www.dohokubus.com/files/santa.pdf",
+                    "desc": "13:20 / 13:50 / 14:20 / 14:50 / 15:20 / 15:50 / 16:20"
+                },
+                {
+                    "name": "自由軒",
+                    "lng": 142.363,
+                    "lat": 43.7655,
+                    "address": "Jiyuken Asahikawa",
+                    "desc": "孤獨的美食家名店 (洋食)",
+                    "openTime": "11:30-14:30",
+                    "type": "food",
+                    "time": "18:30"
+                }
+            ],
+            "day": 3,
+            "weekday": "Mon"
+        },
+        {
+            "date": "2026-03-17",
+            "activities": [
+                {
+                    "address": "Kamui Ski Links",
+                    "time": "09:00",
+                    "type": "transport",
+                    "desc": "約40分鐘。 8:00 / 8:30 / 9:00 / 9:30 / 10:00 / 10:30",
+                    "link": "https://www.dohokubus.com/files/santa.pdf",
+                    "openTime": "08:00-16:30",
+                    "lat": 43.7022,
+                    "linkText": "巴士時刻",
+                    "lng": 142.1932,
+                    "name": "前往神居滑雪場"
+                },
+                {
+                    "address": "Kamui Ski Links",
+                    "type": "ski",
+                    "name": "滑雪 (Kamui)",
+                    "lat": 43.7022,
+                    "openTime": "09:00-16:00",
+                    "time": "10:00",
+                    "desc": "Day 3: 最後衝刺",
+                    "lng": 142.1932
+                },
+                {
+                    "link": "https://www.dohokubus.com/files/santa.pdf",
+                    "address": "",
+                    "name": "結束當日滑雪行程",
+                    "desc": "13:20 / 13:50 / 14:20 / 14:50 / 15:20 / 15:50 / 16:20",
+                    "time": "15:30",
+                    "type": "transport",
+                    "linkText": "道北巴士455"
+                },
+                {
+                    "lng": 142.364,
+                    "name": "成吉思汗 蒙古烤肉",
+                    "desc": "with 游可丞",
+                    "time": "19:30",
+                    "lat": 43.7665,
+                    "address": "旭川成吉思汗 大黒屋 旭川五丁目店（本店）",
+                    "type": "food",
+                    "openTime": "17:00-22:30"
+                }
+            ],
+            "title": "神居滑雪日 (Day 3)",
+            "weekday": "Tue",
+            "day": 4
+        },
+        {
+            "date": "2026-03-18",
+            "activities": [
+                {
+                    "time": "10:00",
+                    "link": "https://www.kamui-skilinks.com/accsess/",
+                    "lng": 142.33,
+                    "linkText": "巴士時刻",
+                    "openTime": "09:00-21:00",
+                    "address": "Santa Present Park",
+                    "type": "transport",
+                    "name": "前往聖誕禮物公園",
+                    "lat": 43.75,
+                    "desc": "約25分鐘。 8:00 / 8:30 / 9:00 / 9:30 / 10:00 / 10:30"
+                },
+                {
+                    "name": "滑雪 (Santa Park)",
+                    "address": "Santa Present Park",
+                    "openTime": "09:00-21:00",
+                    "type": "ski",
+                    "lat": 43.75,
+                    "desc": "夜間滑雪初體驗，美麗的夜景",
+                    "time": "10:30",
+                    "lng": 142.33
+                },
+                {
+                    "lng": 142.3653,
+                    "lat": 43.7656,
+                    "name": "結束當日滑雪行程",
+                    "type": "transport",
+                    "time": "19:00",
+                    "desc": "時間太晚需要叫車回市區",
+                    "address": "OMO7旭川 by 星野リゾート"
+                },
+                {
+                    "lng": 142.365,
+                    "name": "天金居酒屋",
+                    "type": "food",
+                    "address": "Tenkin",
+                    "openTime": "16:30-22:30",
+                    "time": "20:00",
+                    "lat": 43.767,
+                    "desc": "旭川老字號居酒屋 (最好要預約)"
+                }
+            ],
+            "day": 5,
+            "title": "聖誕禮物公園",
+            "weekday": "Wed"
+        },
+        {
+            "date": "2026-03-19",
+            "activities": [
+                {
+                    "name": "OMO7 退房",
+                    "time": "09:40",
+                    "desc": "行李先暫時寄放OMO7",
+                    "type": "hotel",
+                    "address": "OMO7 Asahikawa",
+                    "lng": 142.3653,
+                    "lat": 43.7656
+                },
+                {
+                    "desc": "巴士車程約40分鐘。 接駁車時間 10:00",
+                    "time": "10:00",
+                    "openTime": "10:30-15:30",
+                    "lat": 43.7679,
+                    "name": "前往旭山動物園",
+                    "lng": 142.4795,
+                    "address": "Asahiyama Zoo",
+                    "type": "transport"
+                },
+                {
+                    "lat": 43.7679,
+                    "lng": 142.4795,
+                    "name": "旭山動物園",
+                    "address": "Asahiyama Zoo",
+                    "type": "visit",
+                    "openTime": "10:30-15:30",
+                    "desc": "企鵝散步時間11:00/14:30",
+                    "time": "10:50"
+                },
+                {
+                    "type": "transport",
+                    "time": "15:00",
+                    "desc": "接駁車時間 14:00/15:30",
+                    "name": "離開旭山動物園",
+                    "address": ""
+                },
+                {
+                    "address": "JR Inn Asahikawa",
+                    "name": "前往 JR INN 寄放行李",
+                    "desc": "先回車站飯店 Check-in",
+                    "lng": 142.3582,
+                    "time": "15:30",
+                    "lat": 43.7628,
+                    "type": "hotel"
+                },
+                {
+                    "lng": 142.408,
+                    "lat": 43.769,
+                    "time": "17:00",
+                    "address": "Minaminagayama Station",
+                    "desc": "購物逛街 (GU / Uniqlo / ABC-Mart / DAISO)",
+                    "type": "shop",
+                    "name": "南永山站周邊"
+                },
+                {
+                    "time": "19:00",
+                    "address": "",
+                    "type": "food",
+                    "desc": "周邊美食 (拉麵村/壽司)",
+                    "name": "南永山晚餐"
+                }
+            ],
+            "weekday": "Thu",
+            "day": 6,
+            "title": "動物園與南永山"
+        },
+        {
+            "day": 7,
+            "date": "2026-03-20",
+            "activities": [
+                {
+                    "name": "旭川市博物館",
+                    "lng": 142.355,
+                    "type": "visit",
+                    "address": "旭川市博物館",
+                    "openTime": "09:00-17:00",
+                    "desc": "車站走路850公尺距離",
+                    "lat": 43.76,
+                    "time": "09:45"
+                },
+                {
+                    "desc": "軍事博物館 (旭川開拓的歷史)",
+                    "openTime": "09:00-16:00",
+                    "name": "北鎮記念館",
+                    "lat": 43.78,
+                    "time": "11:00",
+                    "type": "visit",
+                    "lng": 142.35,
+                    "address": "北鎮記念館"
+                },
+                {
+                    "openTime": "11:30-21:30",
+                    "address": "ラマイ 旭川春光店",
+                    "lat": 43.79,
+                    "desc": "Ajianbaramai Asahikawa Shunkoten",
+                    "name": "湯咖哩",
+                    "type": "food",
+                    "lng": 142.36,
+                    "time": "13:00"
+                },
+                {
+                    "time": "14:00",
+                    "address": "MEGAドン・キホーテ 旭川店",
+                    "type": "shop",
+                    "name": "MEGA唐吉訶德",
+                    "lng": 142.365,
+                    "openTime": "09:00-02:00",
+                    "desc": "無印良品就在隔壁啦",
+                    "lat": 43.785
+                },
+                {
+                    "lng": 142.3582,
+                    "time": "17:30",
+                    "desc": "Aeon Mall 旭川站前",
+                    "name": "購物/市區散策",
+                    "openTime": "10:00-21:00",
+                    "lat": 43.7628,
+                    "address": "Aeon Mall Asahikawa Ekimae",
+                    "type": "shop"
+                },
+                {
+                    "desc": "還沒吃到的拉麵店: 青葉、山頭火等",
+                    "time": "19:30",
+                    "name": "拉麵巡禮",
+                    "type": "food",
+                    "address": ""
+                }
+            ],
+            "title": "自由探索",
+            "weekday": "Fri"
+        },
+        {
+            "title": "返程",
+            "date": "2026-03-21",
+            "weekday": "Sat",
+            "day": 8,
+            "activities": [
+                {
+                    "address": "レストラン ハレル",
+                    "type": "food",
+                    "openTime": "06:30-09:30",
+                    "lat": 43.7628,
+                    "name": "Cabin restaurants",
+                    "desc": "飯店早餐buffet",
+                    "lng": 142.3582,
+                    "time": "08:30"
+                },
+                {
+                    "name": "JR INN 退房",
+                    "desc": "Check-out: 10:00 AM",
+                    "lat": 43.7628,
+                    "lng": 142.3582,
+                    "time": "10:00",
+                    "address": "JR Inn Asahikawa",
+                    "type": "hotel"
+                },
+                {
+                    "desc": "從旭川站搭乘巴士",
+                    "lat": 43.67,
+                    "lng": 142.45,
+                    "name": "前往旭川機場",
+                    "address": "旭川空港",
+                    "type": "transport",
+                    "time": "10:30"
+                }
+            ]
+        }
+    ],
+    "expenses": [],
+    "checklist": [
+        {
+            "id": 0,
+            "text": "護照",
+            "checked": false
+        },
+        {
+            "id": 1,
+            "checked": false,
+            "text": "簽證/入境卡"
+        },
+        {
+            "checked": false,
+            "text": "日幣/信用卡",
+            "id": 2
+        },
+        {
+            "text": "台幣",
+            "checked": false,
+            "id": 3
+        },
+        {
+            "checked": false,
+            "id": 4,
+            "text": "行動電源"
+        },
+        {
+            "checked": false,
+            "id": 5,
+            "text": "充電設備(變壓器.線材.轉接頭)"
+        },
+        {
+            "text": "個人藥品",
+            "id": 6,
+            "checked": false
+        },
+        {
+            "id": 7,
+            "text": "盥洗用品",
+            "checked": false
+        },
+        {
+            "id": 8,
+            "text": "保險證明",
+            "checked": false
+        },
+        {
+            "checked": false,
+            "text": "雪具/手套/毛帽",
+            "id": 9
+        },
+        {
+            "id": 10,
+            "checked": false,
+            "text": "Esim/SIM card"
+        },
+        {
+            "id": 11,
+            "checked": false,
+            "text": "購物袋"
+        },
+        {
+            "text": "拖鞋",
+            "id": 12,
+            "checked": false
+        },
+        {
+            "id": 13,
+            "checked": false,
+            "text": "保養品.保濕產品"
+        },
+        {
+            "checked": false,
+            "id": 14,
+            "text": "飯店住房證明"
+        },
+        {
+            "checked": false,
+            "id": 15,
+            "text": "牙刷.牙膏.牙線"
+        },
+        {
+            "id": 16,
+            "checked": false,
+            "text": "外套"
+        },
+        {
+            "id": 17,
+            "text": "衣服.褲子",
+            "checked": false
+        },
+        {
+            "checked": false,
+            "text": "內衣褲.襪子",
+            "id": 18
+        },
+        {
+            "checked": false,
+            "id": 19,
+            "text": "保健食品"
+        },
+        {
+            "checked": false,
+            "text": "指甲剪",
+            "id": 20
+        }
+    ],
+    "memos": [
+        {
+            "text": ""
+        }
+    ],
+    "exchangeRate": 0.215
+};
+    // --- DATA_END ---
+
+    createApp({
+        template: '#app-template', 
+        setup() {
+            // Default Data
+            const defaultChecklist = [
+                '護照', '簽證/入境卡', '日幣/信用卡', '台幣', '行動電源', 
+                '充電設備(變壓器.線材.轉接頭)', '個人藥品', '盥洗用品', '保險證明', 
+                '雪具/手套/毛帽', 'Esim/SIM card', '購物袋', '拖鞋', '保養品.保濕產品', 
+                '飯店住房證明', '牙刷.牙膏.牙線', '外套', '衣服.褲子', '內衣褲.襪子', 
+                '保健食品', '指甲剪'
+            ].map((t, i) => ({ id: i, text: t, checked: false }));
+
+            // Mock Weather Forecast Data for 3/14 - 3/21
+            const dailyForecasts = [
+                { icon: 'fa-solid fa-cloud text-gray-400', text: '多雲', temp: '-2°C' }, // Day 1
+                { icon: 'fa-regular fa-snowflake text-blue-300', text: '小雪', temp: '-4°C' }, // Day 2
+                { icon: 'fa-solid fa-snowflake text-blue-400', text: '大雪', temp: '-5°C' }, // Day 3
+                { icon: 'fa-solid fa-cloud-sun text-yellow-400', text: '多雲時晴', temp: '-3°C' }, // Day 4
+                { icon: 'fa-solid fa-sun text-orange-400', text: '晴朗', temp: '-1°C' }, // Day 5
+                { icon: 'fa-solid fa-sun text-orange-400', text: '晴朗', temp: '0°C' }, // Day 6
+                { icon: 'fa-solid fa-cloud text-gray-400', text: '陰天', temp: '-1°C' }, // Day 7
+                { icon: 'fa-regular fa-snowflake text-blue-300', text: '小雪', temp: '-2°C' }, // Day 8
+            ];
+
+            const itinerary = ref([]);
+            const expenses = ref([]);
+            const checklist = ref(defaultChecklist);
+            const memos = ref([{text:''}]);
+            const exchangeRate = ref(0.215);
+            const tripMeta = ref({ destination: 'Asahikawa, Hokkaido', startDate: '2026-03-14', dayCount: 8, currencyCode: 'JPY', langCode: 'ja', lat: 43.7706, lng: 142.3649, dateRange: '2026-03-14 (8天)' });
+            const realtimeWeather = ref(null);
+
+            const newChecklistItem = ref('');
+            const calcAmountForeign = ref(null);
+            const calcAmountTwd = ref(null);
+
+            const isLoading = ref(true);
+            const mode = ref('local'); 
+            const db = ref(null);
+            const auth = ref(null);
+            const userId = ref(null);
+            const saveStatus = ref('saved');
+            
+            const currentTab = ref('itinerary');
+            const activeDayIndex = ref(0);
+            
+            const showAddItemModal = ref(false);
+            const showAddExpenseModal = ref(false);
+            const showSettleModal = ref(false);
+            const showRateModal = ref(false);
+            const showImageViewer = ref(null);
+            const showDayMapModal = ref(false);
+            
+            const isEditing = ref(false);
+            const targetDayIndex = ref(0);
+            
+            let mapInstance = null;
+            const people = ['彬&樺', '翔宇', '敏彥', '可丞'];
+            
+            const newItem = ref({ time: '', name: '', address: '', desc: '', type: 'food' });
+            const newExpense = ref({ item: '', amount: null, payer: '彬&樺', involved: [...people], image: null });
+            const selectedItemIndices = ref({ day: 0, idx: 0 });
+
+            const isRemoteUpdateShared = ref(false);
+            const isRemoteUpdatePrivate = ref(false);
+
+            const tabs = [
+                { id: 'itinerary', name: '行程', icon: 'fa-solid fa-calendar-days' },
+                { id: 'expenses', name: '記帳', icon: 'fa-solid fa-wallet' },
+                { id: 'lists', name: '清單', icon: 'fa-solid fa-list-check' },
+                { id: 'info', name: '資訊', icon: 'fa-solid fa-circle-info' },
+            ];
+
+            const debounce = (fn, delay) => {
+                let timeoutId;
+                return (...args) => { clearTimeout(timeoutId); timeoutId = setTimeout(() => fn(...args), delay); }
+            };
+
+            const initApp = async () => {
+                // Initialize Firebase
+                if (typeof __firebase_config !== 'undefined' && __firebase_config) {
+                    try {
+                        const config = JSON.parse(__firebase_config);
+                        const firebaseApp = initializeApp(config);
+                        auth.value = getAuth(firebaseApp);
+                        db.value = getFirestore(firebaseApp);
+                        const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
+                        
+                        // Auth Logic
+                        if (typeof __initial_auth_token !== 'undefined' && __initial_auth_token) {
+                            await signInWithCustomToken(auth.value, __initial_auth_token);
+                        } else {
+                            await signInAnonymously(auth.value);
+                        }
+                        
+                        onAuthStateChanged(auth.value, (user) => {
+                            if (user) {
+                                userId.value = user.uid;
+                                mode.value = 'cloud';
+                                initFirestoreListeners(appId);
+                            } else {
+                                mode.value = 'local';
+                                loadImportedData();
+                            }
+                        });
+
+                    } catch (e) {
+                        console.error("Firebase init failed", e);
+                        mode.value = 'local';
+                        loadImportedData();
+                    }
+                } else {
+                    mode.value = 'local';
+                    loadImportedData();
+                }
+            };
+
+            const loadImportedData = () => {
+                const LOCAL_KEY = 'travel_buddy_local_v1';
+                const localData = localStorage.getItem(LOCAL_KEY);
+                
+                if (localData) {
+                    try {
+                        const parsed = JSON.parse(localData);
+                        tripMeta.value = parsed.tripMeta || IMPORTED_TRIP_DATA.tripMeta;
+                        itinerary.value = parsed.itinerary || IMPORTED_TRIP_DATA.itinerary;
+                        expenses.value = parsed.expenses || IMPORTED_TRIP_DATA.expenses || [];
+                        checklist.value = parsed.checklist || IMPORTED_TRIP_DATA.checklist || defaultChecklist;
+                        memos.value = parsed.memos || IMPORTED_TRIP_DATA.memos || [{text:''}];
+                        exchangeRate.value = parsed.exchangeRate || 0.215;
+                    } catch(e) {
+                        useStaticData();
+                    }
+                } else {
+                    useStaticData();
+                }
+                
+                isLoading.value = false;
+                fetchRealtimeWeather();
+            };
+
+            const useStaticData = () => {
+                tripMeta.value = IMPORTED_TRIP_DATA.tripMeta;
+                itinerary.value = IMPORTED_TRIP_DATA.itinerary;
+                if (IMPORTED_TRIP_DATA.expenses) expenses.value = IMPORTED_TRIP_DATA.expenses;
+                if (IMPORTED_TRIP_DATA.checklist) checklist.value = IMPORTED_TRIP_DATA.checklist;
+            };
+
+            const saveLocalData = () => {
+                const LOCAL_KEY = 'travel_buddy_local_v1';
+                localStorage.setItem(LOCAL_KEY, JSON.stringify({
+                    itinerary: itinerary.value,
+                    expenses: expenses.value,
+                    checklist: checklist.value,
+                    memos: memos.value,
+                    exchangeRate: exchangeRate.value,
+                    tripMeta: tripMeta.value
+                }));
+                saveStatus.value = 'saved';
+            };
+
+            const initFirestoreListeners = (appId) => {
+                if (!db.value || !userId.value) return;
+
+                const sharedRef = doc(db.value, 'artifacts', appId, 'public', 'data', 'travel_data', 'shared_trip');
+                
+                onSnapshot(sharedRef, (docSnap) => {
+                    isLoading.value = false;
+                    if (docSnap.metadata.hasPendingWrites) return;
+
+                    if (docSnap.exists()) {
+                        const data = docSnap.data();
+                        isRemoteUpdateShared.value = true;
+                        
+                        if (data.itinerary) itinerary.value = data.itinerary;
+                        if (data.expenses) expenses.value = data.expenses;
+                        if (data.tripMeta) tripMeta.value = data.tripMeta;
+                        if (data.exchangeRate) exchangeRate.value = data.exchangeRate;
+                        
+                        fetchRealtimeWeather();
+                        nextTick(() => isRemoteUpdateShared.value = false);
+                    } else {
+                        if (!isRemoteUpdateShared.value) {
+                             useStaticData();
+                             saveCloudShared();
+                             fetchRealtimeWeather();
+                        }
+                    }
+                }, (error) => {
+                    console.error("Shared listener error:", error);
+                    isLoading.value = false;
+                });
+
+                const privateRef = doc(db.value, 'artifacts', appId, 'users', userId.value, 'travel_data', 'private_lists');
+                
+                onSnapshot(privateRef, (docSnap) => {
+                    if (docSnap.metadata.hasPendingWrites) return;
+                    if (docSnap.exists()) {
+                        const data = docSnap.data();
+                        isRemoteUpdatePrivate.value = true;
+                        if (data.checklist) checklist.value = data.checklist;
+                        if (data.memos) memos.value = data.memos;
+                        nextTick(() => isRemoteUpdatePrivate.value = false);
+                    }
+                }, (error) => {
+                    console.error("Private listener error:", error);
+                });
+            };
+
+            const saveCloudShared = async () => {
+                if (!db.value) return;
+                const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
+                const ref = doc(db.value, 'artifacts', appId, 'public', 'data', 'travel_data', 'shared_trip');
+                try { 
+                    await setDoc(ref, { 
+                        itinerary: itinerary.value, 
+                        expenses: expenses.value, 
+                        exchangeRate: exchangeRate.value, 
+                        tripMeta: tripMeta.value 
+                    }, { merge: true });
+                    saveStatus.value = 'saved';
+                } catch(e) {
+                    console.error("Save shared failed", e);
+                    saveStatus.value = 'error';
+                }
+            };
+
+            const saveCloudPrivate = async () => {
+                if (!db.value || !userId.value) return;
+                const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
+                const ref = doc(db.value, 'artifacts', appId, 'users', userId.value, 'travel_data', 'private_lists');
+                try { 
+                    await setDoc(ref, { 
+                        checklist: checklist.value, 
+                        memos: memos.value 
+                    }, { merge: true }); 
+                    saveStatus.value = 'saved';
+                } catch(e) {
+                    console.error("Save private failed", e);
+                    saveStatus.value = 'error';
+                }
+            };
+
+            const debouncedSaveShared = debounce(() => { 
+                if(mode.value === 'cloud') saveCloudShared(); 
+                else saveLocalData();
+            }, 1500);
+            
+            const debouncedSavePrivate = debounce(() => { 
+                if(mode.value === 'cloud') saveCloudPrivate();
+                else saveLocalData();
+            }, 1500);
+
+            watch([itinerary, expenses, exchangeRate, tripMeta], () => {
+                if (!isRemoteUpdateShared.value) {
+                    saveStatus.value = 'saving';
+                    debouncedSaveShared();
+                }
+            }, { deep: true });
+
+            watch([checklist, memos], () => {
+                if (!isRemoteUpdatePrivate.value) {
+                    saveStatus.value = 'saving';
+                    debouncedSavePrivate();
+                }
+            }, { deep: true });
+
+            const fetchRealtimeWeather = () => {
+                if (!tripMeta.value.lat) return;
+                fetch(`https://api.open-meteo.com/v1/forecast?latitude=${tripMeta.value.lat}&longitude=${tripMeta.value.lng}&current_weather=true&hourly=apparent_temperature`)
+                    .then(res => res.json())
+                    .then(data => {
+                        if (!data || !data.current_weather) return;
+                        const current = data.current_weather;
+                        let feelsLike = current.temperature;
+                        try {
+                            if (data.hourly && data.hourly.time && data.hourly.apparent_temperature) {
+                                const index = data.hourly.time.indexOf(current.time);
+                                if (index !== -1) feelsLike = data.hourly.apparent_temperature[index];
+                            }
+                        } catch(e) {}
+
+                        realtimeWeather.value = {
+                            temp: current.temperature,
+                            feelsLike: feelsLike,
+                            isDay: current.is_day === 1,
+                            code: current.weathercode
+                        };
+                    })
+                    .catch(() => {
+                        realtimeWeather.value = { temp: -2, feelsLike: -5, isDay: true, code: 71 };
+                    });
+            };
+
+            const openMap = (addr) => window.open(`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(addr)}`, '_blank');
+            const openGoogleMapsNav = (addr) => window.open(`https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(addr)}`, '_blank');
+            const openLink = (url) => window.open(url, '_blank');
+            const formatNumber = (num) => num ? num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") : '0';
+            
+            const getCardBgClass = (type) => ({ food: 'bg-orange-100', shop: 'bg-pink-100', visit: 'bg-blue-100', transport: 'bg-gray-100', hotel: 'bg-indigo-100', ski: 'bg-cyan-100' }[type] || 'bg-gray-100');
+            const getTypeIcon = (t) => ({ food: 'fa-solid fa-utensils text-orange-400', shop: 'fa-solid fa-bag-shopping text-pink-400', visit: 'fa-solid fa-camera text-blue-400', transport: 'fa-solid fa-car text-gray-500', hotel: 'fa-solid fa-bed text-indigo-500', ski: 'fa-solid fa-person-skiing text-cyan-500' }[t] || 'fa-solid fa-circle text-gray-400');
+            
+            const openAddModal = () => {
+                isEditing.value = false;
+                newItem.value = { time: '', name: '', address: '', desc: '', type: 'food' };
+                targetDayIndex.value = activeDayIndex.value;
+                showAddItemModal.value = true;
+            };
+
+            const editItemDirect = (day, idx) => {
+                const item = itinerary.value[day].activities[idx];
+                newItem.value = { ...item };
+                isEditing.value = true;
+                targetDayIndex.value = day;
+                selectedItemIndices.value = { day, idx };
+                showAddItemModal.value = true;
+            };
+
+            const deleteItemDirect = (day, idx) => {
+                if(confirm('確認刪除此行程?')) { 
+                    itinerary.value[day].activities.splice(idx, 1); 
+                }
+            };
+
+            const saveItem = () => {
+                if(!newItem.value.name) return;
+                const time = newItem.value.time || '00:00';
+                
+                if (isEditing.value) {
+                    const originalDay = selectedItemIndices.value.day;
+                    const idx = selectedItemIndices.value.idx;
+                    
+                    if (targetDayIndex.value === originalDay) {
+                        itinerary.value[originalDay].activities[idx] = { ...newItem.value, time };
+                    } else {
+                        itinerary.value[originalDay].activities.splice(idx, 1);
+                        if(!itinerary.value[targetDayIndex.value].activities) itinerary.value[targetDayIndex.value].activities = [];
+                        itinerary.value[targetDayIndex.value].activities.push({ ...newItem.value, time });
+                        itinerary.value[targetDayIndex.value].activities.sort((a,b) => a.time.localeCompare(b.time));
+                    }
+                } else {
+                    if(!itinerary.value[targetDayIndex.value].activities) itinerary.value[targetDayIndex.value].activities = [];
+                    itinerary.value[targetDayIndex.value].activities.push({...newItem.value, time});
+                    itinerary.value[targetDayIndex.value].activities.sort((a,b) => a.time.localeCompare(b.time));
+                }
+                
+                if (isEditing.value && targetDayIndex.value === selectedItemIndices.value.day) {
+                     itinerary.value[selectedItemIndices.value.day].activities.sort((a,b) => a.time.localeCompare(b.time));
+                }
+                showAddItemModal.value = false; 
+                newItem.value = { time: '', name: '', address: '', desc: '', type: 'food' };
+                isEditing.value = false;
+            };
+            
+            const addChecklistItem = () => {
+                if (!newChecklistItem.value) return;
+                checklist.value.push({ id: Date.now(), text: newChecklistItem.value, checked: false });
+                newChecklistItem.value = '';
+            };
+            const deleteChecklistItem = (idx) => { if (confirm('確定刪除此項目？')) checklist.value.splice(idx, 1); };
+            const editChecklistItem = (idx) => {
+                const newText = prompt('編輯項目', checklist.value[idx].text);
+                if (newText && newText.trim()) checklist.value[idx].text = newText.trim();
+            };
+
+            const handleImageUpload = (e) => {
+                const file = e.target.files[0]; if (!file) return;
+                const reader = new FileReader();
+                reader.onload = (ev) => {
+                    const img = new Image(); img.onload = () => {
+                        const cvs = document.createElement('canvas'); const ctx = cvs.getContext('2d');
+                        let w = img.width, h = img.height, max = 800;
+                        if (w > h) { if (w > max) { h *= max/w; w = max; } } else { if (h > max) { w *= max/h; h = max; } }
+                        cvs.width = w; cvs.height = h; ctx.drawImage(img, 0, 0, w, h);
+                        newExpense.value.image = cvs.toDataURL('image/jpeg', 0.6);
+                    }; img.src = ev.target.result;
+                }; reader.readAsDataURL(file);
+            };
+
+            const addExpense = () => {
+                if(!newExpense.value.item || !newExpense.value.amount) return;
+                expenses.value.unshift({ ...newExpense.value });
+                showAddExpenseModal.value = false; 
+                newExpense.value = { item: '', amount: null, payer: '彬&樺', involved: [...people], image: null };
+            };
+            const deleteExpense = (i) => { if(confirm('確認刪除?')) expenses.value.splice(i, 1); };
+            const toggleInvolved = (p) => {
+                const idx = newExpense.value.involved.indexOf(p);
+                if (idx > -1) { if (newExpense.value.involved.length > 1) newExpense.value.involved.splice(idx, 1); }
+                else newExpense.value.involved.push(p);
+            };
+            const toggleCheck = (i) => checklist.value[i].checked = !checklist.value[i].checked;
+            const addMemo = () => memos.value.push({text:''});
+            const removeMemo = (i) => memos.value.splice(i, 1);
+            const viewImage = (img) => { if(img) showImageViewer.value = img; };
+            
+            const updateFromForeign = () => {
+                if (calcAmountForeign.value !== null) calcAmountTwd.value = parseFloat((calcAmountForeign.value * exchangeRate.value).toFixed(0));
+                else calcAmountTwd.value = null;
+            };
+            const updateFromTwd = () => {
+                if (calcAmountTwd.value !== null) calcAmountForeign.value = parseFloat((calcAmountTwd.value / exchangeRate.value).toFixed(2));
+                else calcAmountForeign.value = null;
+            };
+
+            const openDayMap = () => { showDayMapModal.value = true; nextTick(() => initMap()); };
+            const initMap = () => {
+                if(mapInstance) mapInstance.remove();
+                const center = [tripMeta.value.lat || 43.7706, tripMeta.value.lng || 142.3649];
+                mapInstance = L.map('map').setView(center, 12);
+                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '© OpenStreetMap' }).addTo(mapInstance);
+                const acts = itinerary.value[activeDayIndex.value]?.activities || [];
+                const latlngs = [];
+                
+                acts.forEach((item, index) => { 
+                    if(item.lat && item.lng) { 
+                        const loc = [item.lat, item.lng];
+                        latlngs.push(loc);
+                        const icon = L.divIcon({
+                            className: 'custom-div-icon',
+                            html: `<div class="w-6 h-6 bg-kr-text text-white rounded-full flex items-center justify-center font-bold text-xs shadow-md border-2 border-white">${index + 1}</div>`,
+                            iconSize: [24, 24],
+                            iconAnchor: [12, 12]
+                        });
+                        L.marker(loc, {icon: icon}).addTo(mapInstance)
+                            .bindPopup(`<b>${item.name}</b><br><a href="https://www.google.com/maps/dir/?api=1&destination=${item.lat},${item.lng}" target="_blank" style="color:#3b82f6; font-weight:bold;">導航去這裡</a>`); 
+                    } 
+                });
+                
+                if (latlngs.length > 0) {
+                    L.polyline(latlngs, {color: '#475569', weight: 3, opacity: 0.7, dashArray: '5, 10'}).addTo(mapInstance);
+                    mapInstance.fitBounds(latlngs, {padding:[50,50]});
+                }
+            };
+            const locateMe = () => {
+                navigator.geolocation.getCurrentPosition(p => {
+                    const {latitude, longitude} = p.coords;
+                    L.marker([latitude, longitude]).addTo(mapInstance).bindPopup("You").openPopup();
+                    mapInstance.setView([latitude, longitude], 14);
+                });
+            };
+
+            const resetDataConfirm = () => {
+                const msg = mode.value === 'local' ? '重置將會清空本機資料並回到初始畫面，確定嗎？' : '警告：您正在使用雲端模式，重置將會清空「雲端資料庫」的所有行程與記帳。確定嗎？';
+                if(confirm(msg)) {
+                    if (mode.value === 'local') {
+                        localStorage.removeItem('travel_buddy_local_v1');
+                        location.reload();
+                    } else {
+                        itinerary.value = []; expenses.value = [];
+                        tripMeta.value = { destination: 'New Trip', startDate: '', dayCount: 3, currencyCode: 'JPY', langCode: 'ja', lat: 0, lng: 0, dateRange: '' };
+                        saveCloudShared();
+                        alert("資料已重置");
+                    }
+                }
+            };
+
+            const downloadHtmlWithData = () => {
+                const currentData = { tripMeta: tripMeta.value, itinerary: itinerary.value, expenses: expenses.value, checklist: checklist.value, memos: memos.value, exchangeRate: exchangeRate.value };
+                let htmlContent = document.documentElement.outerHTML;
+                const jsonStr = JSON.stringify(currentData, null, 4).replace(new RegExp('<' + '/script>', 'g'), '<\\/script>');
+                const dataString = `const IMPORTED_TRIP_DATA = ${jsonStr};`;
+                const regex = new RegExp("\\/\\/\\s*-+\\s*DATA_START\\s*-+[\\s\\S]*?\\/\\/\\s*-+\\s*DATA_END\\s*-+");
+                
+                if (regex.test(htmlContent)) htmlContent = htmlContent.replace(regex, () => `// --- DATA_START ---\n    ${dataString}\n    // --- DATA_END ---`);
+                else { alert('備份失敗：找不到資料區塊。'); return; }
+
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(htmlContent, 'text/html');
+                const appDiv = doc.querySelector('#app');
+                if (appDiv) {
+                    appDiv.removeAttribute('data-v-app');
+                    appDiv.innerHTML = `<div class="loading-overlay text-center px-6"><i class="fa-solid fa-plane-up text-5xl text-blue-400 mb-4 animate-bounce"></i><p class="font-bold text-gray-700 text-lg mb-2">正在載入您的行程...</p></div>`;
+                }
+
+                const finalHtml = '<!DOCTYPE html>\n' + doc.documentElement.outerHTML;
+                const blob = new Blob(['\uFEFF' + finalHtml], { type: 'text/html;charset=utf-8' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = `TravelBuddy_${tripMeta.value.destination || 'Trip'}_Backup.html`;
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                URL.revokeObjectURL(url);
+            };
+
+            onMounted(() => { initApp(); });
+
+            return {
+                mode, isLoading, tripMeta, resetDataConfirm, currentTab, activeDayIndex, itinerary, expenses, checklist, memos, 
+                tabs, exchangeRate, people, showAddItemModal, showAddExpenseModal, showSettleModal, showRateModal, showImageViewer, 
+                showDayMapModal, newItem, newExpense, openMap, openDayMap, openGoogleMapsNav, openLink, locateMe,
+                addExpense, deleteExpense, handleImageUpload, viewImage, toggleInvolved, toggleCheck, addMemo, removeMemo, 
+                formatNumber, getCardBgClass, getTypeIcon, isEditing, openAddModal, editItemDirect, deleteItemDirect, saveItem, targetDayIndex, 
+                downloadHtmlWithData, newChecklistItem, addChecklistItem, deleteChecklistItem, editChecklistItem,
+                calcAmountForeign, calcAmountTwd, updateFromForeign, updateFromTwd, realtimeWeather, saveStatus, dailyForecasts,
+                saveStatusText: computed(() => {
+                    if (saveStatus.value === 'saving') return '儲存中...';
+                    if (saveStatus.value === 'saved') return '已存檔';
+                    return '儲存失敗';
+                }),
+                totalExpense: computed(() => expenses.value.reduce((s,i)=>s+i.amount,0)),
+                headerDateText: computed(() => {
+                    const activeDay = itinerary.value[activeDayIndex.value];
+                    if (!activeDay) return 'Loading...';
+                    return `${activeDay.date} (第 ${activeDay.day} 天)`;
+                }),
+                currentDayWeather: computed(() => dailyForecasts[activeDayIndex.value]),
+                settlements: computed(() => {
+                    let bal = {}; people.forEach(p=>bal[p]=0);
+                    expenses.value.forEach(e => { const s = e.amount/e.involved.length; bal[e.payer]+=e.amount; e.involved.forEach(p=>bal[p]-=s); });
+                    let deb=[], cred=[];
+                    for(const [p,v] of Object.entries(bal)) { if(v<-1) deb.push({p,v}); if(v>1) cred.push({p,v}); }
+                    deb.sort((a,b)=>a.v-b.v); cred.sort((a,b)=>b.v-a.v);
+                    let res=[], i=0, j=0;
+                    while(i<deb.length && j<cred.length) {
+                        let amt = Math.min(Math.abs(deb[i].v), cred[j].v);
+                        if(amt>0) res.push({from:deb[i].p, to:cred[j].p, amount:Math.round(amt)});
+                        deb[i].v+=amt; cred[j].v-=amt;
+                        if(Math.abs(deb[i].v)<1) i++; if(cred[j].v<1) j++;
+                    }
+                    return res;
+                })
+            };
+        }
+    }).mount('#app');
+</script>
+
+</body></html>
